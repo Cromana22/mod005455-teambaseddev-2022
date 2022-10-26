@@ -1,12 +1,8 @@
-
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
-function App() {
+
+function homeCarousel() {
   return (
-    <div className="App">
-     
-     <Carousel>
+    <Carousel>
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -45,11 +41,7 @@ function App() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-
-       
-       
-    </div>
   );
 }
 
-export default App;
+export default homeCarousel;
