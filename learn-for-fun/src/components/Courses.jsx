@@ -11,7 +11,7 @@ const Courses = () => {
         <div id="courses">
 
             <div className="row">
-                <div className="col-1 border">
+                <div className="col-1">
 
                 </div>
 
@@ -22,7 +22,7 @@ const Courses = () => {
 
                             <div className="row p-2">
                                 <div className="col-3">
-                                    <div class="fw-bold fs-2 text-center">
+                                    <div className="fw-bold fs-2 text-center">
                                         Courses
                                     </div>
                                 </div>
@@ -64,77 +64,77 @@ const Courses = () => {
                         </div>
 
                         <div className="col-md-3 text-center">
+                            <Link to='./:id' exact='true'>
+                                <Card className="text-dark text-center" style={{ maxWidth: '24rem', margin: 'auto', height: '24rem' }}>
+                                    <Card.Img src="https://i.imgur.com/oAms2Zs.png" alt="Card image" style={{ height: "100%" }} />
+                                    <Card.ImgOverlay className='p-0'>
 
-                            <Card className="text-dark text-center" style={{ maxWidth: '24rem', margin: 'auto', height: '24rem' }}>
-                                <Card.Img src="https://i.imgur.com/oAms2Zs.png" alt="Card image" style={{ height: "100%" }} />
-                                <Card.ImgOverlay className='p-0'>
+                                        <Card.Text className="position-absolute text-align-center" style={{ bottom: '0', width: '100%' }}>
+                                            <div className="text-dark" style={{ backgroundColor: "rgba(255,255,255,0.2)", width: "100%", height: '9rem' }}>
+                                                <div className="row">
+                                                    <div className="col-1">
 
-                                    <Card.Text className="position-absolute text-align-center" style={{ bottom: '0', width: '100%' }}>
-                                        <div className="text-dark" style={{ backgroundColor: "rgba(255,255,255,0.2)", width: "100%", height: '9rem' }}>
-                                            <div className="row">
-                                                <div className="col-1">
-
-                                                </div>
-                                                <div className="col-10">
-
-
-                                                    <div className="row">
-                                                        <div className="col-md-12">
-                                                            <div className="fs-4 fw-bolder">
-                                                                Course name
-                                                            </div>
-
-                                                        </div>
                                                     </div>
+                                                    <div className="col-10">
 
-                                                    <div className="font-dark">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                                    </div>
 
-                                                    <div className="text-align-center" style={{ bottom: '0', width: '100%', position: 'absolute', left: '0' }}>
-                                                        <div className="text-dark" style={{ backgroundColor: "rgba(255,255,255,1)", width: "100%" }}>
-                                                            <div className="row p-2">
-                                                                <div className="col-1">
-
-                                                                </div>
-                                                                <div className="col-3">
-                                                                    <div className="bg-secondary text-white p-1 rounded">
-                                                                        <i class="bi bi-star"></i> 4.5
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-3">
-                                                                    <div className="bg-secondary text-white p-1 rounded">
-                                                                        <span class="bi bi-eye"></span> 200k
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-4">
-                                                                    <div className="bg-dark text-white">
-
-                                                                    </div>
+                                                        <div className="row">
+                                                            <div className="col-md-12">
+                                                                <div className="fs-4 fw-bolder">
+                                                                    Course name
                                                                 </div>
 
-                                                                <div className="col-1">
-
-                                                                </div>
                                                             </div>
                                                         </div>
+
+                                                        <div className="font-dark">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                                        </div>
+
+                                                        <div className="text-align-center" style={{ bottom: '0', width: '100%', position: 'absolute', left: '0' }}>
+                                                            <div className="text-dark" style={{ backgroundColor: "rgba(255,255,255,1)", width: "100%" }}>
+                                                                <div className="row p-2">
+                                                                    <div className="col-1">
+
+                                                                    </div>
+                                                                    <div className="col-3">
+                                                                        <div className="bg-secondary text-white p-1 rounded">
+                                                                            <i className="bi bi-star"></i> 4.5
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="col-3">
+                                                                        <div className="bg-secondary text-white p-1 rounded">
+                                                                            <span className="bi bi-eye"></span> 200k
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="col-4">
+                                                                        <div className="bg-dark text-white">
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div className="col-1">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
                                                     </div>
+                                                    <div className="col-1">
 
-
-
-                                                </div>
-                                                <div className="col-1">
-
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                    </Card.Text>
+                                        </Card.Text>
 
 
-                                </Card.ImgOverlay>
-                            </Card>
-
+                                    </Card.ImgOverlay>
+                                </Card>
+                            </Link>
 
                         </div>
                         <div className="col-md-3 text-center">
@@ -149,7 +149,7 @@ const Courses = () => {
                     </div>
                 </div>
 
-                <div className="col-1 border">
+                <div className="col-1">
 
                 </div>
             </div>
