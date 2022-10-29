@@ -1,7 +1,7 @@
 import React from "react"; 
 
 
-const NavBar = () => {
+function NavBar () {
     return ( 
         <body>
             <h1>I am a NavBar</h1>
