@@ -1,0 +1,16 @@
+.bannerContainer {
+    height: 200px;
+    width: 100%;
+}
+
+.bannerImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.section {
+    max-height: 500px;
+    margin-top: 20px;
+    overflow: hidden;
+}
