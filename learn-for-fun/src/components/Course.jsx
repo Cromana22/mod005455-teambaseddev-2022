@@ -1,7 +1,6 @@
 import React from "react"; 
 
-
-const Register = () => {
+function Course () {
     return ( 
         <body>
             <h1>Hello World</h1>
@@ -9,4 +8,4 @@ const Register = () => {
     );
 }
  
-export default Register;
+export default Course;

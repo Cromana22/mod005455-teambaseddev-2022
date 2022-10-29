@@ -1,7 +1,7 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
 
-const LoginPage = () => {
+function LoginPage () {
     return ( 
         <body>
             <h1>Hello World</h1>

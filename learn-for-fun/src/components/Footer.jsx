@@ -1,12 +1,11 @@
 import React from "react"; 
 
-
-const Course = () => {
+function Footer () {
     return ( 
         <body>
-            <h1>Hello World</h1>
+            <h1>I am a Footer</h1>
         </body>
     );
 }
  
-export default Course;
+export default Footer;

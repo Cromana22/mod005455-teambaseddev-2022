@@ -1,12 +1,11 @@
 import React from "react"; 
 
-
-const Footer = () => {
+function Register () {
     return ( 
         <body>
-            <h1>I am a Footer</h1>
+            <h1>Hello World</h1>
         </body>
     );
 }
  
-export default Footer;
+export default Register;

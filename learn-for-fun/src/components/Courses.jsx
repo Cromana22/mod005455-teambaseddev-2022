@@ -1,7 +1,6 @@
 import React from "react"; 
 
-
-const Courses = () => {
+function Courses () {
     return ( 
         <body>
             <h1>Hello Courses</h1>
