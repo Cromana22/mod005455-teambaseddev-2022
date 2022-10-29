@@ -14,3 +14,24 @@
     margin-top: 20px;
     overflow: hidden;
 }
+
+.endSection {
+    margin-bottom: 20px;
+}
+
+.thirds {
+    display: inline-block;
+    width: 33.33%;
+}
+
+.homeCards {
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
