@@ -1,12 +1,12 @@
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../css/Carousel.css";
 
 function HomeCarousel() {
   return (
     <Carousel>
-      <Carousel.Item>
+      <Carousel.Item className='carouselItem'>
         <img
-          className="d-block w-100"
           src={require("../images/games.jpg")}
           alt="First slide"
         />
@@ -15,10 +15,10 @@ function HomeCarousel() {
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+
+      <Carousel.Item className='carouselItem'>
         <img
-          className="d-block w-100"
-          src={require("../images/game3.jpg")}
+          src={require("../images/fate-game.webp")}
           alt="Second slide"
         />
         <Carousel.Caption>
@@ -26,10 +26,10 @@ function HomeCarousel() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+
+      <Carousel.Item className='carouselItem'>
         <img
-          className="d-block w-100"
-          src={require("../images/games.jpg")}
+          src={require("../images/neon-game.webp")}
           alt="Third slide"
         />
         <Carousel.Caption>
