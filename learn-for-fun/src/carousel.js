@@ -1,12 +1,13 @@
 import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function homeCarousel() {
+function HomeCarousel() {
   return (
     <Carousel>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="games.jpg"
+          src={require("./games.jpg")}
           alt="First slide"
         />
         <Carousel.Caption>
@@ -17,10 +18,9 @@ function homeCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="game3.jpg"
+          src={require("./game3.jpg")}
           alt="Second slide"
         />
-
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -29,10 +29,9 @@ function homeCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="games.jpg"
+          src={require("./games.jpg")}
           alt="Third slide"
         />
-
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
@@ -44,4 +43,4 @@ function homeCarousel() {
   );
 }
 
-export default homeCarousel;
+export default HomeCarousel;
