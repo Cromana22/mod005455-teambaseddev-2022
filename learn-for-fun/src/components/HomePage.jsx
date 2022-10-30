@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import HomeCarousel from "./carousel";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
 import {Button, Card} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import "../css/HomePage.css";
 
 function HomePage() {
