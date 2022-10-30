@@ -18,6 +18,9 @@ function NavBar() {
                         <li className="nav-item">
                             <a className="nav-link" href="javascript:void(0)">Courses</a>
                         </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/register">Signup</a>
+                        </li>
                     </ul>
                     <form className="d-flex">
                         <input className="form-control me-2" type="text" placeholder="Search" />
