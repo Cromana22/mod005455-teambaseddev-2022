@@ -1,7 +1,6 @@
 import React from "react"; 
 
-
-const Register = () => {
+function Register () {
     return ( 
         <body>
             <h1>Hello World</h1>
