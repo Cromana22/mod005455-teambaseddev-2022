@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"; 
 
-const Course = () => {
+function Course () {
     return ( 
         <body>
             <h1>Hello World</h1>

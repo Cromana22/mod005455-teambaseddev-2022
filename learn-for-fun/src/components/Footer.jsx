@@ -1,12 +1,21 @@
 import React from "react"; 
 
-
-const Footer = () => {
+function Footer() {
     return ( 
-        <body>
-            <h1>I am a Footer</h1>
-        </body>
-    );
+        <footer className="text-center text-dark">
+
+          <a href="#home">link</a>
+          <a href="#home">link</a>
+          <a href="#home">linkt</a>
+          <a href="#home">link</a>
+
+          <div className="text-center text-dark p-3">
+            © 2022 Copyright:
+            <a className="text-light" href="#">Learn4Fun</a>
+          </div>
+
+        </footer>
+    )
 }
  
 export default Footer;

@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 
-const Courses = () => {
+function Courses () {
     return (
         <div id="courses">
 
