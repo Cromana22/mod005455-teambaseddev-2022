@@ -37,7 +37,7 @@ function NavBar() {
                                 <SearchBar />
                                 <Nav
                                     className="my-2 my-lg-0 text-center d-flex"
-                                    style={{ maxHeight: '100px' }}
+                                    style={{ maxHeight: '100px', minWidth: '120px' }}
                                     navbarScroll
                                 >
                                     <Container fluid className="justify-content-center">
