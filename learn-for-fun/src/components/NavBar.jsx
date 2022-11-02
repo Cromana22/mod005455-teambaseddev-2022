@@ -12,7 +12,7 @@ function NavBar() {
         
         <div style={{ overflow: "hidden" }}>
             
-            <div className="row">
+            <div className="row bg-light">
                 <div className="col-1 p-0">
 
                 </div>
