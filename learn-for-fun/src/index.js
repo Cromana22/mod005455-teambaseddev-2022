@@ -9,6 +9,7 @@ import LoginPage from "./components/LoginPage";
 import Courses from "./components/Courses";
 import Course from "./components/Course";
 import Signup from './components/signup';
+import AccountPage from "./components/AcountPage";
 
 const rootElement = document.getElementById("root");
 render(
@@ -19,6 +20,7 @@ render(
       <Route path="/register" element={<Signup />} />
       <Route path="/course" element={<Course />} />
       <Route path="/courses" element={<Courses />} />
+      <Route path="/myaccount" element={<AccountPage />} />
     </Routes>
   </BrowserRouter>,
   rootElement
