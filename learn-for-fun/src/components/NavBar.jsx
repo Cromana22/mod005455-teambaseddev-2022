@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import SearchBar from "./searchBarNav.js";
+import SearchBar from "./searchBarNav.jsx";
 
 function NavBar() {
     return (
@@ -31,7 +31,7 @@ function NavBar() {
 
                                     <Nav.Link href="./Courses" className="text-center">Courses</Nav.Link>
 
-
+                                    <Nav.Link href="./Register" className="text-center">Register</Nav.Link>
 
                                 </Nav>
                                 <SearchBar />
