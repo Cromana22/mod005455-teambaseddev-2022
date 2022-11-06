@@ -10,6 +10,7 @@ import Courses from "./components/Courses";
 import Course from "./components/Course";
 import Signup from './components/signup';
 import AccountPage from "./components/AcountPage";
+import Register from "./components/Register";
 
 const rootElement = document.getElementById("root");
 render(
@@ -18,6 +19,7 @@ render(
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/course" element={<Course />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/myaccount" element={<AccountPage />} />
