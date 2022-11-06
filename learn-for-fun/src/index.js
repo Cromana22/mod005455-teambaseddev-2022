@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
-import Register from "./components/Register";
 import Courses from "./components/Courses";
 import Course from "./components/Course";
+import Signup from './components/signup';
 import AccountPage from "./components/AcountPage";
 
 const rootElement = document.getElementById("root");
