@@ -26,7 +26,7 @@ render(
       <Route path="/courses" element={<Courses />} />
       <Route path="/myaccount" element={<AccountPage />} />
       <Route path="/games" element={<GameListPage />} />
-      <Route path="/game" element={<GamePage />} />
+      <Route path="/games/:id" element={<GamePage />} />
     </Routes>
   </BrowserRouter>,
   rootElement

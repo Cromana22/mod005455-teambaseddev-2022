@@ -12,7 +12,7 @@ function GameListPage() {
     gamesData.forEach(game =>
     {
         gameslist.push(
-            <GameCard key={game.id} name={game.name} image={game.image} descript={game.description} link={game.link} />
+            <GameCard key={game.id} name={game.name} image={game.image} descript={game.description} cardId={game.id} />
         );
     })
 
