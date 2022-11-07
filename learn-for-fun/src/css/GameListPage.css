@@ -1,0 +1,25 @@
+.cardlist {
+    margin-top: 20px;
+}
+
+.endSection {
+    margin-bottom: 20px;
+}
+
+.gameCards {
+    margin: 2rem;
+    height: max-content;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.card a:link, a:visited, a:active, a:hover {
+    text-decoration: none;
+    color: inherit;
+}

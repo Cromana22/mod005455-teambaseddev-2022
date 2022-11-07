@@ -1,0 +1,16 @@
+[
+	{
+		"id": "StrongholdSolitaire",
+		"name": "Stronghold Solitaire",
+		"description": "Move all cards to the four foundations and use the free cells as your help. On the tableau build down, only the top card is available for play.",
+		"link": "https://cdn.htmlgames.com/StrongholdSolitaire/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/strongholdsolitaire300200.jpg"
+	},
+	{
+		"id": "Pinball",
+		"name": "Pinball",
+		"description": "Classic Pinball game. Use the arrow keys to control the game or drag and tap on the screen.",
+		"link": "https://cdn.htmlgames.com/Pinball/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/pinball300.jpg"
+	}
+]
