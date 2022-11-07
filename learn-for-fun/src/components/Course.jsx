@@ -46,13 +46,13 @@ function Course() {
                                     <Link to="/files/guides.txt" target="_blank" download style={{ textDecoration: "none" }}>
                                         <Button className="btn btn-primary" variant="primary" id="downloadCodeButton">
                                             <i className="bi bi-cloud-arrow-down"></i>
-                                             Download Code
+                                            Download Code
                                         </Button>
                                     </Link>
                                     <Link to="/files/guides.txt" target="_blank" download style={{ textDecoration: "none" }}>
                                         <Button className="btn btn-primary" variant="primary" id="downloadGuideButton">
                                             <i className="bi bi-file-earmark-pdf"></i>
-                                             Download Guide
+                                            Download Guide
                                         </Button>
                                     </Link>
                                 </div>
@@ -80,9 +80,9 @@ function Course() {
                                     </div>
                                     <hr></hr>
 
-                                    <div className="row"> {/* This is a singular reviews template */}
-                                        <div className="col-3">
-                                            <img src="https://i.imgur.com/8UdKNS4.jpeg" className="img-thumbnail rounded-circle" alt="profile"></img>
+                                    <div className="row py-2"> {/* This is a singular reviews template */}
+                                        <div className="col-3 text-center">
+                                            <img src="https://i.imgur.com/8UdKNS4.jpeg" className="img-thumbnail" alt="profile"></img>
                                         </div>
                                         <div className="col-9">
                                             <div className="fs-3">Username</div>
@@ -96,13 +96,8 @@ function Course() {
                                                 </div>
                                             </div>
                                             <div className="fs-5">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                                                fermentum dapibus eleifend. Donec tincidunt feugiat nunc. Quisque
-                                                nec dolor pretium, sodales lacus ut, posuere nunc. Orci varius natoque
-                                                penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur
-                                                aliquam massa in est imperdiet tempus. Interdum et malesuada fames ac ante ipsum
-                                                primis in faucibus. Maecenas neque orci, pretium at aliquet eu, vestibulum id tortor.
-                                                Fusce tincidunt dui at ligula congue imperdiet. Sed tellus ante, fermentum ut ultricies sed, porttitor eu risus.
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum dapibus eleifend.
+                                                 Donec tincidunt feugiat nunc. Quisque nec dolor pretium, sodales lacus ut, posuere nunc. Orci varius natoque p
                                             </div>
                                         </div>
 
