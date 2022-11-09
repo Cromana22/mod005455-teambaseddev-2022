@@ -31,10 +31,14 @@ class Courses extends React.Component {
     render() {
         return (
             <div id="courses">
+
                 <NavBar></NavBar>
+
                 <div className="row">
+
                     <div className="col-1">
                     </div>
+
                     <div className="col-10">
                         <div className="row">
                             <div className="row border-bottom border-dark">
@@ -44,8 +48,11 @@ class Courses extends React.Component {
                                             Courses
                                         </div>
                                     </div>
+
                                     <div className="col-6">
+
                                     </div>
+
                                     <div className="col-3">
                                         <Dropdown className='text-center'>
                                             <Dropdown.Toggle variant="secondary" id="dropdown-basic">
@@ -61,18 +68,11 @@ class Courses extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row p-2">
-                                <div className="col-3">
-                                    <div className="fw-bold fs-2 text-center">
-                                        Courses
-                                    </div>
-                                </div>
-                            </div>
-
-
 
                             <div className="py-3">
+
                             </div>
+
                             {this.state.data.map((result) => {
                                 return (
 
@@ -142,14 +142,10 @@ class Courses extends React.Component {
                                                         </div>
 
                                                     </Card.Text>
-
-
                                                 </Card.ImgOverlay>
                                             </Card>
                                         </Link>
-
                                     </div>
-
                                 )
                             })}
                             <div className="col-md-3 text-center">
