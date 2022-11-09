@@ -11,6 +11,7 @@ import Course from "./components/Course";
 import Signup from './components/signup';
 import AccountPage from "./components/AcountPage";
 import Register from "./components/Register";
+import Subscription from "./components/Subscription";
 
 const rootElement = document.getElementById("root");
 render(
@@ -23,6 +24,7 @@ render(
       <Route path="/course" element={<Course />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/myaccount" element={<AccountPage />} />
+      <Route path="/subscription" element={<Subscription />} />
     </Routes>
   </BrowserRouter>,
   rootElement
