@@ -1,6 +1,6 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
-import Navbar from 'react-bootstrap/Navbar';
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
@@ -17,31 +17,32 @@ function LoginPage() {
             setShowPasswordBoolean(true)
             setFormPasswordType("text")
         }
-        else{
+        else {
             setShowPasswordBoolean(false)
             setFormPasswordType("password")
         }
 
     }
 
-    function attemptLogin(){
+    function attemptLogin() {
         axios.get('http://localhost/verifyLogin.php').then(res => {
 
-            this.setState({ loginMessage: res.Message });
-            console.log(this.state.Message)
-          
+            setLoginMessage(res.Message)
+            console.log(res.Message)
+
         });
     }
 
     return (
         <div id="loginPage">
-            <Navbar></Navbar>
+            <NavBar></NavBar>
             <div className="row">
                 <div className="col-1">
 
                 </div>
                 <div className="col-10">
 
+                    <hr></hr>
 
                     <div className="text-center">
                         <div className="fs-2">
@@ -64,7 +65,7 @@ function LoginPage() {
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control type={formPasswordType} placeholder="Password" onChange={(e) => setFormPassword(e.target.value)}/>
+                                    <Form.Control type={formPasswordType} placeholder="Password" onChange={(e) => setFormPassword(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                     <Form.Check onClick={handleShowPasswordClick} type="checkbox" label="Show password" />
