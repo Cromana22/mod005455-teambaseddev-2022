@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Dropdown from 'react-bootstrap/Dropdown';
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import { Nav } from "react-bootstrap";
 
-function Courses () {
+
+function Courses() {
     return (
         <div id="courses">
-
+            <NavBar></NavBar>
+            <hr></hr>
             <div className="row">
                 <div className="col-1">
 
@@ -22,6 +26,7 @@ function Courses () {
 
                             <div className="row p-2">
                                 <div className="col-3">
+                                    
                                     <div className="fw-bold fs-2 text-center">
                                         Courses
                                     </div>
@@ -64,7 +69,7 @@ function Courses () {
                         </div>
 
                         <div className="col-md-3 text-center">
-                            <Link to='./:id' exact='true'>
+                            <Link to='/Course/1' exact='true'>
                                 <Card className="text-dark text-center" style={{ maxWidth: '24rem', margin: 'auto', height: '24rem' }}>
                                     <Card.Img src="https://i.imgur.com/oAms2Zs.png" alt="Card image" style={{ height: "100%" }} />
                                     <Card.ImgOverlay className='p-0'>
@@ -153,7 +158,7 @@ function Courses () {
 
                 </div>
             </div>
-
+            <Footer></Footer>
         </div>
     );
 }

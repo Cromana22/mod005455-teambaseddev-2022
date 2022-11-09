@@ -29,9 +29,9 @@ function NavBar() {
                                 >
                                     <Nav.Link href="/" className="text-center">Home</Nav.Link>
 
-                                    <Nav.Link href="./Courses" className="text-center">Courses</Nav.Link>
+                                    <Nav.Link href="/Courses" className="text-center">Courses</Nav.Link>
 
-                                    <Nav.Link href="./Register" className="text-center">Register</Nav.Link>
+                                    <Nav.Link href="/Register" className="text-center">Register</Nav.Link>
 
                                 </Nav>
                                 <SearchBar />
@@ -41,7 +41,7 @@ function NavBar() {
                                     navbarScroll
                                 >
                                     <Container fluid className="justify-content-center">
-                                        <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
+                                        <Nav.Link href="/login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
                                             <i class="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
                                             <div className="">
                                                 Sign in
