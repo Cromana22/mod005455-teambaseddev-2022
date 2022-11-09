@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 import axios from 'axios';
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import { Nav } from "react-bootstrap";
 
 class Courses extends React.Component {
 
@@ -29,17 +31,13 @@ class Courses extends React.Component {
     render() {
         return (
             <div id="courses">
-
+                <NavBar></NavBar>
                 <div className="row">
                     <div className="col-1">
-
                     </div>
-
                     <div className="col-10">
                         <div className="row">
-
                             <div className="row border-bottom border-dark">
-
                                 <div className="row p-2">
                                     <div className="col-3">
                                         <div className="fw-bold fs-2 text-center">
@@ -47,15 +45,8 @@ class Courses extends React.Component {
                                         </div>
                                     </div>
                                     <div className="col-6">
-
                                     </div>
-
-
-
-
-
                                     <div className="col-3">
-
                                         <Dropdown className='text-center'>
                                             <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                                                 Filter
@@ -67,15 +58,15 @@ class Courses extends React.Component {
                                                 <Dropdown.Item href="#/action-3">Another Games</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
-
                                     </div>
                                 </div>
-
-
-
-
-
-
+                            </div>
+                            <div className="row p-2">
+                                <div className="col-3">
+                                    <div className="fw-bold fs-2 text-center">
+                                        Courses
+                                    </div>
+                                </div>
                             </div>
 
 
@@ -95,7 +86,6 @@ class Courses extends React.Component {
                                                         <div className="text-dark" style={{ backgroundColor: "rgba(255,255,255,0.2)", width: "100%", height: '9rem' }}>
                                                             <div className="row">
                                                                 <div className="col-1">
-
                                                                 </div>
                                                                 <div className="col-10">
 
@@ -178,7 +168,7 @@ class Courses extends React.Component {
 
                     </div>
                 </div>
-
+                <Footer></Footer>
             </div>
         );
     }

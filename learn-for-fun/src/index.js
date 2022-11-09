@@ -20,7 +20,7 @@ render(
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<Register />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/course" element={<Course />} />
+      <Route path="/course/:courseID" element={<Course />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/myaccount" element={<AccountPage />} />
     </Routes>
