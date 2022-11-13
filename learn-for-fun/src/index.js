@@ -26,7 +26,6 @@ render(
       <Route path="/course/:courseID" element={<Course />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/myaccount" element={<AccountPage />} />
-      <Route path="/paymentdetails" element={<PaymentDetails />} />
       <Route path="/games" element={<GameListPage />} />
       <Route path="/games/:id" element={<GamePage />} />
     </Routes>
