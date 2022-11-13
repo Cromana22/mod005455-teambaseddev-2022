@@ -8,9 +8,8 @@ import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import Courses from "./components/Courses";
 import Course from "./components/Course";
-import Signup from './components/signup';
+import Signup from './components/Signup';
 import AccountPage from "./components/AcountPage";
-import Register from "./components/Register";
 import Subscription from "./components/Subscription";
 
 const rootElement = document.getElementById("root");
@@ -19,8 +18,7 @@ render(
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/register" element={<Signup />} />
       <Route path="/course" element={<Course />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/myaccount" element={<AccountPage />} />
