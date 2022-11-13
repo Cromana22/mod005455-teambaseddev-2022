@@ -52,13 +52,12 @@ function HomePage() {
                 </div>
 
                 <div className="center section">
-                    <Link to="/register">
-                        <Button variant="primary">Subscribe</Button>
-                    </Link>
+                    
+                        <Button variant="primary"> <Link to="/subscription" exact='true'>Subscribe</Link></Button>
                 </div>
             </div>
 
-            <Footer />
+            
         </div>
     )
 }
