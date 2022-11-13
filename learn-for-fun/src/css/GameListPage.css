@@ -1,5 +1,8 @@
 .cardlist {
     margin-top: 20px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: 0 !important;
 }
 
 .endSection {
@@ -8,7 +11,12 @@
 
 .gameCards {
     margin: 2rem;
-    height: max-content;
+    height: 340px;
+    min-width: 260px;
+}
+
+img {
+    padding-bottom: 0.5rem;
 }
 
 .center {
