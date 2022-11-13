@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
     return ( 
-        <footer className="text-center text-dark fixed-bottom">
+        <footer className="text-center text-dark">
 
           <a href="#home">link</a>
           <a href="#home">link</a>

@@ -33,9 +33,8 @@ function NavBar() {
 
                                     <Nav.Link href="/courses" className="text-center">Courses</Nav.Link>
 
-                                    <Nav.Link href="/register" className="text-center">Register</Nav.Link>
-
                                     <Nav.Link href="/games" className="text-center">Games</Nav.Link>
+                                    
                                 </Nav>
                                 <SearchBar />
                                 <Nav

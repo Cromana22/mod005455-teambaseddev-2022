@@ -35,11 +35,11 @@ function LoginPage() {
 
     return (
         <div id="loginPage">
-            <NavBar></NavBar>
-            <div className="row">
-                <div className="col-1">
+            <NavBar />
 
-                </div>
+            <div className="row">
+                <div className="col-1"></div>
+
                 <div className="col-10">
 
                     <hr></hr>
@@ -49,10 +49,10 @@ function LoginPage() {
                             Hello, login below
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-3">
 
-                        </div>
+                    <div className="row">
+                        <div className="col-3"></div>
+
                         <div className="col-6">
                             <Form>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -74,20 +74,21 @@ function LoginPage() {
                                     Login
                                 </Button>
                             </Form>
-                        </div>
-                        <div className="col-3">
+
+                            <br />
+                            <p>Not Registered? Click <a href="./register">here</a> to sign up!</p>
 
                         </div>
+
+                        <div className="col-3"></div>
                     </div>
 
-
-
-
                 </div>
-                <div className="col-1">
 
-                </div>
+                <div className="col-1"></div>
             </div>
+
+            <Footer />
         </div>
     );
 }
