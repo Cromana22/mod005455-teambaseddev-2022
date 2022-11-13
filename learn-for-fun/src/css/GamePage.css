@@ -1,0 +1,20 @@
+.endSection {
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+#gamehere {
+    margin-top: 20px;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}

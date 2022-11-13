@@ -6,12 +6,12 @@ function SearchBar() {
 
 
         <form className="container-fluid">
-            <div class="row">
-                <div class="col-3">
+            <div className="row">
+                <div className="col-3">
 
                 </div>
-                <div class="col-6">
-                    <div class="row">
+                <div className="col-6">
+                    <div className="row">
                         <div className=" align-items-center border input-group-addon row shadow-sm rounded">
                             <div className="col-9 input-group-addon" style={{ paddingLeft: "0px", paddingRight: "0px" }}>
                                 <input className="form-control border-0"
@@ -31,7 +31,7 @@ function SearchBar() {
 
                     </div>
                 </div>
-                <div class="col-3">
+                <div className="col-3">
 
                 </div>
             </div>

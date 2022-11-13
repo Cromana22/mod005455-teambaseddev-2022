@@ -1,0 +1,58 @@
+[
+	{
+		"id": "StrongholdSolitaire",
+		"name": "Stronghold Solitaire",
+		"description": "Move all cards to the four foundations and use the free cells as your help. On the tableau build down, only the top card is available for play.",
+		"link": "https://cdn.htmlgames.com/StrongholdSolitaire/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/strongholdsolitaire300200.jpg"
+	},
+	{
+		"id": "Pinball",
+		"name": "Pinball",
+		"description": "Classic Pinball game. Use the arrow keys to control the game or drag and tap on the screen.",
+		"link": "https://cdn.htmlgames.com/Pinball/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/pinball300.jpg"
+	},
+	{
+		"id": "ClassicPac",
+		"name": "Classic Pac",
+		"description": "Classic Pacman: eat all the yellow dots and avoid the ghosts.",
+		"link": "https://cdn.htmlgames.com/ClassicPac/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/classicpac300200.jpg"
+	},
+	{
+		"id": "HiddenSpotsCastles",
+		"name": "Hidden Spots - Castles",
+		"description": "Find all the hidden spots on the Castle images. Click on the image where you have spotted a hidden spot.",
+		"link": "https://cdn.htmlgames.com/HiddenSpotsCastles/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/hiddenspotscastles300200.jpg"
+	},
+	{
+		"id": "RetroBricks",
+		"name": "Retro Bricks",
+		"description": "Tetris game in retro style. Drop down bricks and complete full horizontal lines.",
+		"link": "https://cdn.htmlgames.com/RetroBricks/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/retrobricks300200.jpg"
+	},
+	{
+		"id": "MahjongMix",
+		"name": "Mahjong Mix",
+		"description": "A mix of 5 different Mahjong games: Mahjong Solitaire, Mahjong Connect, Triple Mahjong, Mahjong Slide and 10 Mahjong.",
+		"link": "https://cdn.htmlgames.com/MahjongMix/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/mahjongmix300200.jpg"
+	},
+	{
+		"id": "Cats1010",
+		"name": "Cats 1010",
+		"description": "1010 game with cats. Drag and rotate shapes and reach the indicated goal.",
+		"link": "https://cdn.htmlgames.com/Cats1010/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/cats1010300200.jpg"
+	},
+	{
+		"id": "DailySudoku",
+		"name": "Daily Sudoku",
+		"description": "Every day a new Sudoku in 4 difficulty levels. Solve according to the sudoku rules: a number (from 1-9) can only be used once in every row, column or 3x3 box.",
+		"link": "https://cdn.htmlgames.com/DailySudoku/",
+		"image":  "https://www.htmlgames.com/uploaded/game/thumb/dailysudoku300x200.jpg"
+	}
+]
