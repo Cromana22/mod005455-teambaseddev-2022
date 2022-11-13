@@ -10,7 +10,6 @@ import Courses from "./components/Courses";
 import Course from "./components/Course";
 import Signup from './components/Signup';
 import AccountPage from "./components/AcountPage";
-import PaymentDetails from "./components/PaymentDetails"
 import Subscription from "./components/Subscription";
 import GameListPage from "./components/GameListPage";
 import GamePage from "./components/GamePage";
