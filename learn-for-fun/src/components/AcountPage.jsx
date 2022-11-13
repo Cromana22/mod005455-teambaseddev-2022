@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import PaymentDetails from "./PaymentDetails1";
+import PaymentDetails from "./PaymentDetails";
 
 function ShowDetails() {
     const myDetails = document.getElementById("myDetails");
