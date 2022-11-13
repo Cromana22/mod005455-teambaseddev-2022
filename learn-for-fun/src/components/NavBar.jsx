@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "../css/NavBar.css";
 import SearchBar from "./searchBarNav.jsx";
 
 function NavBar() {
@@ -33,25 +34,28 @@ function NavBar() {
 
                                     <Nav.Link href="/courses" className="text-center">Courses</Nav.Link>
 
-                                    <Nav.Link href="/register" className="text-center">Register</Nav.Link>
-
                                     <Nav.Link href="/games" className="text-center">Games</Nav.Link>
+
                                 </Nav>
+
                                 <SearchBar />
+                                
                                 <Nav
-                                    className="my-2 my-lg-0 text-center d-flex"
-                                    style={{ maxHeight: '100px', minWidth: '120px' }}
+                                    className="my-2 my-lg-0 text-center d-flex rightside"
+                                    style={{ maxHeight: '100px', minWidth: '120px'}}
                                     navbarScroll
                                 >
+
+                                    <Nav.Link href="/myaccount" className="text-center">My Account</Nav.Link>
+
                                     <Container fluid className="justify-content-center">
                                         <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
                                             <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
-                                            <div className="">
+                                            <div className="nowrap">
                                                 Sign in
                                             </div>
                                         </Nav.Link>
                                     </Container>
-
 
                                 </Nav>
                             </Navbar.Collapse>
