@@ -19,7 +19,9 @@ function NavBar() {
                 <div className="col-10 p-0">
                     <Navbar bg="light" expand="lg">
                         <Container fluid style={{ padding: '0' }}>
-                            <Navbar.Brand href="#"><Link to='./'><img src="LOGO99.png" alt="Learn4Fun logo" width={150} /></Link></Navbar.Brand>
+                            <Navbar.Brand>
+                                <Link to='../'><img src="LOGO99.png" alt="Learn4Fun logo" width={150} /></Link>
+                            </Navbar.Brand>
                             <Navbar.Toggle aria-controls="navbarScroll" />
                             <Navbar.Collapse id="navbarScroll">
                                 <Nav
@@ -29,10 +31,11 @@ function NavBar() {
                                 >
                                     <Nav.Link href="/" className="text-center">Home</Nav.Link>
 
-                                    <Nav.Link href="./Courses" className="text-center">Courses</Nav.Link>
+                                    <Nav.Link href="/courses" className="text-center">Courses</Nav.Link>
 
-                                    <Nav.Link href="./Register" className="text-center">Register</Nav.Link>
+                                    <Nav.Link href="/register" className="text-center">Register</Nav.Link>
 
+                                    <Nav.Link href="/games" className="text-center">Games</Nav.Link>
                                 </Nav>
                                 <SearchBar />
                                 <Nav
@@ -42,7 +45,7 @@ function NavBar() {
                                 >
                                     <Container fluid className="justify-content-center">
                                         <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
-                                            <i class="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
+                                            <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
                                             <div className="">
                                                 Sign in
                                             </div>

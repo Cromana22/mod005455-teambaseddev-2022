@@ -11,6 +11,8 @@ import Course from "./components/Course";
 import Signup from './components/Signup';
 import AccountPage from "./components/AcountPage";
 import Subscription from "./components/Subscription";
+import GameListPage from "./components/GameListPage";
+import GamePage from "./components/GamePage";
 
 const rootElement = document.getElementById("root");
 render(
@@ -19,10 +21,12 @@ render(
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<Signup />} />
-      <Route path="/course" element={<Course />} />
+      <Route path="/subscription" element={<Subscription />} />
+      <Route path="/course/:courseID" element={<Course />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/myaccount" element={<AccountPage />} />
-      <Route path="/subscription" element={<Subscription />} />
+      <Route path="/games" element={<GameListPage />} />
+      <Route path="/games/:id" element={<GamePage />} />
     </Routes>
   </BrowserRouter>,
   rootElement
