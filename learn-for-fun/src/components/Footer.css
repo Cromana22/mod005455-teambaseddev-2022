@@ -10,7 +10,7 @@
     background-color: #4b23c3;
     border-color: #500fab;
     border-radius: 9px;
-    --bs-btn-hover-color: orangered;
+    --bs-btn-hover-color: #dcdc2b;
     --bs-btn-hover-bg: #500fab;
     --bs-btn-hover-border-color: #500fab;
 }
