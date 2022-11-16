@@ -1,0 +1,41 @@
+.btn-primary {
+    margin-left: 16px;
+    text-decoration: none;
+    background-color: #4b23c3;
+    border-color: #500fab;
+    border-radius: 9px;
+    --bs-btn-hover-color: #dcdc2b;
+    --bs-btn-hover-bg: #500fab;
+    --bs-btn-hover-border-color: #500fab;
+}
+
+.section button {
+    margin: auto;
+    margin-bottom: 15px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: #4b23c3;
+    border-color: #500fab;
+    border-radius: 9px;
+}
+
+.section button:hover {
+    color: #dcdc2b;
+    background-color: #4b23c3;
+    border-color: #500fab
+}
+
+.btn-secondary {
+    margin-left: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: #4b23c3;
+    border-color: #500fab;
+    border-radius: 9px;
+    --bs-btn-hover-color: #dcdc2b;
+    --bs-btn-hover-bg: #500fab;
+    --bs-btn-hover-border-color: #500fab;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import './Footer.css';
+import '../css/Footer.css';
 import Button from 'react-bootstrap/Button';
 
 function Footer() {
@@ -24,6 +24,9 @@ function Footer() {
               <h6 className="text-dark">© 2022 Copyright: Learn4Fun</h6>
             </div>
           </div>
+        </div>
+        <div className="col-1">
+
         </div>
       </div>
     </footer>
