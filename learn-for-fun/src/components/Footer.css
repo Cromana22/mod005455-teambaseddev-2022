@@ -1,0 +1,18 @@
+.links{
+    margin-left: auto;
+    padding: 20px;
+    align-items: center;
+    max-width: 70%;
+    margin: 0 auto;
+    border-top: 2px solid #333;
+}
+.links a{
+    margin-left: 16px;
+    text-decoration: none;
+    background-color: #4b23c3;
+    border-color: #500fab;
+    border-radius: 9px;
+    --bs-btn-hover-color: orangered;
+    --bs-btn-hover-bg: #500fab;
+    --bs-btn-hover-border-color: #500fab;
+}
