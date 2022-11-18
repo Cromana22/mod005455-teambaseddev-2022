@@ -29,8 +29,8 @@ function LoginPage() {
         const data = [{email: formEmail, password: formPassword}];
 
         axios.post('http://localhost/verifyLogin.php', data).then(res => {
-            setLoginMessage(res.Message);
-            console.log(res)
+            setLoginMessage(res.data.Message);
+            console.log(res.data.Message);
         });
     }
 

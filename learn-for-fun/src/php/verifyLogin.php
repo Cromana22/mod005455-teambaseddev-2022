@@ -53,6 +53,6 @@
         }
 
         $response[] = array("Message"=>$message);
-        echo json_encode($message);
+        echo json_encode($response);
     };
 ?>
