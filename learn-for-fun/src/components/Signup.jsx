@@ -21,6 +21,11 @@ function Signup() {
   const [signupMessage, setSignupMessage] = useState("");
   const navigate = useNavigate();
   
+  function onSubmitForm(event){
+    event.preventDefault();
+    onSubmit();
+  }
+
   function onSubmit(){
  
     //if passwords match
@@ -65,11 +70,12 @@ function Signup() {
       <NavBar />
 
       <div className='container margin-top'>
-        <Form>
+        <Form onSubmit={onSubmitForm}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" maxLength="255"
               onChange={(e) => setFormEmail(e.target.value)}
+              required
             />
             <Form.Text className="text">
               We'll never share your email with anyone else.
@@ -80,6 +86,7 @@ function Signup() {
             <Form.Label>First Name</Form.Label>
             <Form.Control type="text" placeholder="First name" maxLength="100"
               onChange={(e) => setFormFirstName(e.target.value)}
+              required
             />
           </Form.Group>
 
@@ -87,6 +94,7 @@ function Signup() {
             <Form.Label>Last Name</Form.Label>
             <Form.Control type="text" placeholder="Last name" maxLength="100"
               onChange={(e) => setFormLastName(e.target.value)}
+              required
             />
           </Form.Group>
 
@@ -94,6 +102,7 @@ function Signup() {
             <Form.Label>Address Line 1</Form.Label>
             <Form.Control type="text" placeholder="Address line 1" maxLength="255"
               onChange={(e) => setFormAddress1(e.target.value)}
+              required
             />
           </Form.Group>
 
@@ -108,6 +117,7 @@ function Signup() {
             <Form.Label>City</Form.Label>
             <Form.Control type="text" placeholder="City" maxLength="100"
               onChange={(e) => setFormCity(e.target.value)}
+              required
             />
           </Form.Group>
 
@@ -122,6 +132,7 @@ function Signup() {
             <Form.Label>Postcode</Form.Label>
             <Form.Control type="text" placeholder="Postcode" maxLength="10"
               onChange={(e) => setFormPostcode(e.target.value)}
+              required
             />
           </Form.Group>
 
@@ -129,6 +140,7 @@ function Signup() {
             <Form.Label>Password</Form.Label>
             <Form.Control type="text" placeholder="Password" maxLength="30"
               onChange={(e) => setFormPassword(e.target.value)}
+              required
             />
           </Form.Group>
 
@@ -136,10 +148,11 @@ function Signup() {
             <Form.Label>Repeat Password</Form.Label>
             <Form.Control type="text" placeholder="Repeat Password" maxLength="30"
               onChange={(e) => setFormRepeatPassword(e.target.value)}
+              required
             />
           </Form.Group>
 
-          <Button variant="primary" onClick={onSubmit}>
+          <Button variant="primary" type="submit">
             Register
           </Button>
         </Form>
