@@ -45,7 +45,7 @@ function Signup() {
       }];
    
       //send and process php
-      axios.post('http://localhost/register.php', data)
+      axios.post('http://localhost/register.php', data, {withCredentials: true})
       .then(res => {
         setSignupMessage(res.data);
         console.log(signupMessage);

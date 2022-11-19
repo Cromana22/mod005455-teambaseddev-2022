@@ -1,8 +1,8 @@
 <?php
     require 'database.php';
 
-    header("Access-Control-Allow-Origin: *");
-    header('Access-Control-Allow-Headers: *');
+    header("Access-Control-Allow-Origin: http://localhost:3000");
+    header('Access-Control-Allow-Headers: content-type');
     header('Access-Control-Allow-Credentials: true');
 
     $postdata = file_get_contents("php://input");
@@ -42,8 +42,15 @@
 
         if ($countsuccess === 1) {
             $message = "registered successfully";
+
+            //set cookies
+            setcookie("email", $email);
+            setcookie("loggedin", "Y");
+            
+            echo json_encode($message);
+        }
+        else {
+            echo json_encode($message);
         }
     };
-
-    echo json_encode($message);
 ?>

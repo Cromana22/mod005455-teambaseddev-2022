@@ -1,5 +1,4 @@
-
-import React from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -7,8 +6,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../css/NavBar.css";
 import SearchBar from "./searchBarNav.jsx";
+import axios from "axios";
 
 function NavBar() {
+
+    const [cookieEmail, setCookieEmail] = useState("");
+    const [cookieLoggedIn, setCookieLoggedIn] = useState("N");
+
+    axios.get('http://localhost/getcookies.php', {withCredentials: true}).then(res => {
+        setCookieEmail(res.data.email);
+        setCookieLoggedIn(res.data.loggedin);
+        console.log(res.data)
+    });
+
     return (
         
         <div style={{ overflow: "hidden" }}>
@@ -45,8 +55,10 @@ function NavBar() {
                                     style={{ maxHeight: '100px', minWidth: '120px'}}
                                     navbarScroll
                                 >
-
-                                    <Nav.Link href="/myaccount" className="text-center">My Account</Nav.Link>
+                                    {
+                                        cookieLoggedIn == 'Y' &&
+                                        <Nav.Link href="/myaccount" className="text-center">My Account</Nav.Link>
+                                    }
 
                                     <Container fluid className="justify-content-center">
                                         <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>

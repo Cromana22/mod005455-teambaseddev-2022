@@ -1,16 +1,18 @@
 <?php
     require 'database.php';
 
-    header("Access-Control-Allow-Origin: *");
-    header('Access-Control-Allow-Headers: *');
+    header("Access-Control-Allow-Origin: http://localhost:3000");
+    header('Access-Control-Allow-Headers: content-type');
     header('Access-Control-Allow-Credentials: true');
 
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata, true);
     $array = $request[0];
 
-    $email = $array['email'];
-    $password = $array['password'];
+    $email = "JC@gmail.com";
+    $password = "Carpenter123";
+    //$email = $array['email'];
+    //$password = $array['password'];
     $message="failed";
 
     // If email and password aren't empty
@@ -29,7 +31,10 @@
             $message="failed";
         }
 
-        $response = $message;
-        echo json_encode($response);
+        //set cookies
+        setcookie("email", $email);
+        setcookie("loggedin", "Y", time()+3600*24, "/");
+
+        echo json_encode($message);
     };
 ?>
