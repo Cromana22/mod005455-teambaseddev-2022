@@ -7,6 +7,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../css/NavBar.css";
 import SearchBar from "./searchBarNav.jsx";
 import axios from "axios";
+import Button from 'react-bootstrap/Button';
 
 function NavBar() {
 
@@ -16,8 +17,14 @@ function NavBar() {
     axios.get('http://localhost/getcookies.php', {withCredentials: true}).then(res => {
         setCookieEmail(res.data.email);
         setCookieLoggedIn(res.data.loggedin);
-        console.log(res.data)
     });
+
+    function logout() {
+        axios.get('http://localhost/logout.php', {withCredentials: true}).then(res => {
+            setCookieEmail("");
+            setCookieLoggedIn("");
+        });
+    }
 
     return (
         
@@ -56,19 +63,35 @@ function NavBar() {
                                     navbarScroll
                                 >
                                     {
-                                        cookieLoggedIn == 'Y' &&
-                                        <Nav.Link href="/myaccount" className="text-center">My Account</Nav.Link>
+                                        cookieLoggedIn == 'Y'
+                                        && <Container style={{ display: 'flex', flexDirection: 'row' }}>
+                                            <Container fluid className="justify-content-center">
+                                                <Nav.Link href="/myaccount" className="align-items-center text-center" style={{  verticalAlign: 'middle' }}>
+                                                    <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
+                                                    <div className="nowrap">
+                                                        My Account
+                                                    </div>
+                                                </Nav.Link>
+                                            </Container>
+                                            <Button 
+                                                style={{ height: 'max-content', marginTop: '15px' }} 
+                                                onClick={logout}
+                                            >
+                                                Logout
+                                            </Button>
+                                        </Container>
                                     }
-
-                                    <Container fluid className="justify-content-center">
-                                        <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
-                                            <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
-                                            <div className="nowrap">
-                                                Sign in
-                                            </div>
-                                        </Nav.Link>
-                                    </Container>
-
+                                    {
+                                        cookieLoggedIn == '' &&
+                                        <Container fluid className="justify-content-center">
+                                            <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
+                                                <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
+                                                <div className="nowrap">
+                                                    Sign in
+                                                </div>
+                                            </Nav.Link>
+                                        </Container>
+                                    }
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>

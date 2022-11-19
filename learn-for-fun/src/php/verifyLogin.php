@@ -9,10 +9,8 @@
     $request = json_decode($postdata, true);
     $array = $request[0];
 
-    $email = "JC@gmail.com";
-    $password = "Carpenter123";
-    //$email = $array['email'];
-    //$password = $array['password'];
+    $email = $array['email'];
+    $password = $array['password'];
     $message="failed";
 
     // If email and password aren't empty
@@ -25,16 +23,16 @@
         // If the query got results
         if ($count == 1) { 
             $message ="success";
+
+            //set cookies
+            setcookie("email", $email);
+            setcookie("loggedin", "Y", time()+3600*24, "/");
+            echo json_encode($message);
         }
 
         elseif ($count !== 1){
             $message="failed";
+            echo json_encode($message);
         }
-
-        //set cookies
-        setcookie("email", $email);
-        setcookie("loggedin", "Y", time()+3600*24, "/");
-
-        echo json_encode($message);
     };
 ?>
