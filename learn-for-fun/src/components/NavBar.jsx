@@ -1,5 +1,4 @@
-
-import React from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -7,8 +6,26 @@ import Navbar from 'react-bootstrap/Navbar';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../css/NavBar.css";
 import SearchBar from "./searchBarNav.jsx";
+import axios from "axios";
+import Button from 'react-bootstrap/Button';
 
 function NavBar() {
+
+    const [cookieEmail, setCookieEmail] = useState("");
+    const [cookieLoggedIn, setCookieLoggedIn] = useState("N");
+
+    axios.get('http://localhost/getcookies.php', {withCredentials: true}).then(res => {
+        setCookieEmail(res.data.email);
+        setCookieLoggedIn(res.data.loggedin);
+    });
+
+    function logout() {
+        axios.get('http://localhost/logout.php', {withCredentials: true}).then(res => {
+            setCookieEmail("");
+            setCookieLoggedIn("");
+        });
+    }
+
     return (
         
         <div style={{ overflow: "hidden" }}>
@@ -45,18 +62,36 @@ function NavBar() {
                                     style={{ maxHeight: '100px', minWidth: '120px'}}
                                     navbarScroll
                                 >
-
-                                    <Nav.Link href="/myaccount" className="text-center">My Account</Nav.Link>
-
-                                    <Container fluid className="justify-content-center">
-                                        <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
-                                            <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
-                                            <div className="nowrap">
-                                                Sign in
-                                            </div>
-                                        </Nav.Link>
-                                    </Container>
-
+                                    {
+                                        cookieLoggedIn == 'Y'
+                                        && <Container style={{ display: 'flex', flexDirection: 'row' }}>
+                                            <Container fluid className="justify-content-center">
+                                                <Nav.Link href="/myaccount" className="align-items-center text-center" style={{  verticalAlign: 'middle' }}>
+                                                    <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
+                                                    <div className="nowrap">
+                                                        My Account
+                                                    </div>
+                                                </Nav.Link>
+                                            </Container>
+                                            <Button 
+                                                style={{ height: 'max-content', marginTop: '15px' }} 
+                                                onClick={logout}
+                                            >
+                                                Logout
+                                            </Button>
+                                        </Container>
+                                    }
+                                    {
+                                        cookieLoggedIn == '' &&
+                                        <Container fluid className="justify-content-center">
+                                            <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
+                                                <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
+                                                <div className="nowrap">
+                                                    Sign in
+                                                </div>
+                                            </Nav.Link>
+                                        </Container>
+                                    }
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>

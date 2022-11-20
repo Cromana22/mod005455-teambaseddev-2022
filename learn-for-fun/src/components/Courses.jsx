@@ -7,7 +7,6 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import axios from 'axios';
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import { Nav } from "react-bootstrap";
 
 class Courses extends React.Component {
 
