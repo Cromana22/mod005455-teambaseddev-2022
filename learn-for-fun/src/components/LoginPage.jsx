@@ -7,6 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function LoginPage() {
+    const [formEmail, setFormEmail] = useState("");
     const [formPassword, setFormPassword] = useState("");
     const [showPasswordBoolean, setShowPasswordBoolean] = useState(false);
     const [formPasswordType, setFormPasswordType] = useState("password");
@@ -17,19 +18,19 @@ function LoginPage() {
             setShowPasswordBoolean(true)
             setFormPasswordType("text")
         }
+
         else {
             setShowPasswordBoolean(false)
             setFormPasswordType("password")
         }
-
     }
 
     function attemptLogin() {
-        axios.get('http://localhost/verifyLogin.php').then(res => {
+        const data = [{email: formEmail, password: formPassword}];
 
-            setLoginMessage(res.Message)
-            console.log(res.Message)
-
+        axios.post('http://localhost/verifyLogin.php', data).then(res => {
+            setLoginMessage(res.data.Message);
+            console.log(res.data.Message);
         });
     }
 
@@ -57,7 +58,7 @@ function LoginPage() {
                             <Form>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
+                                    <Form.Control type="email" placeholder="Enter email" onChange={(e) => setFormEmail(e.target.value)} name="email" />
                                     <Form.Text className="text-muted">
                                         We'll never share your email with anyone else.
                                     </Form.Text>
@@ -65,12 +66,12 @@ function LoginPage() {
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control type={formPasswordType} placeholder="Password" onChange={(e) => setFormPassword(e.target.value)} />
+                                    <Form.Control type={formPasswordType} placeholder="Password" onChange={(e) => setFormPassword(e.target.value)} name="password" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                     <Form.Check onClick={handleShowPasswordClick} type="checkbox" label="Show password" />
                                 </Form.Group>
-                                <Button variant="primary" type="submit" onClick={attemptLogin}>
+                                <Button variant="primary" onClick={attemptLogin}>
                                     Login
                                 </Button>
                             </Form>
