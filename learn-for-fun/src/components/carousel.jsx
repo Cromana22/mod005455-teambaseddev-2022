@@ -11,8 +11,8 @@ function HomeCarousel() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Most Popular Game</h3>
+          <p>Classic Pac is our most popular game. No matter what age, everyone enjoys it. </p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -22,8 +22,8 @@ function HomeCarousel() {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Recently added</h3>
+          <p>Hidden Spots - Castles is the game we have added recently, and it's been popular among teenagers.</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -33,10 +33,8 @@ function HomeCarousel() {
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3>Popular among children</h3>
+          <p>Pinball is a game that kids have been enjoying lately.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
