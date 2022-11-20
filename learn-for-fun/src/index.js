@@ -13,6 +13,7 @@ import AccountPage from "./components/AcountPage";
 import Subscription from "./components/Subscription";
 import GameListPage from "./components/GameListPage";
 import GamePage from "./components/GamePage";
+import './css/Buttons.css';
 
 const rootElement = document.getElementById("root");
 render(

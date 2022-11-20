@@ -55,51 +55,63 @@ function AccountPage() {
         <div id="accountPage">
             <NavBar />
 
-            <div className="section">
-                <Container fluid>
-                    <Row>
-                        <Col>
-                            <button onClick={ShowDetails}>My Details</button>
-                            <br />
-                            <button onClick={ShowSubscription}>My Subscriptions</button>
-                            <br />
-                            <button onClick={ShowPaymentDetails}>My PaymentDetails</button>
-                        </Col>
-                        <Col>
-                            <div id="myDetails" className="">
-                                <p>Name: FROM DATABASE GOES HERE</p>
-                                <p>Address Line 1: FROM DATABASE GOES HERE</p>
-                                <p>Address Line 2: FROM DATABASE GOES HERE</p>
-                                <p>Town: FROM DATABASE GOES HERE</p>
-                                <p>County: FROM DATABASE GOES HERE</p>
-                                <p>Postcode: FROM DATABASE GOES HERE</p>
-                                <p>Email: FROM DATABASE GOES HERE</p>
-                            </div>
-                            <div id="subscriptionDetails" className="d-none">
-                                <p>Subscription Type: FROM DATABASE TYPE (COURSE NAME IF EXISTS)</p>
-                                <p>Subscribed Since: FROM DATABASE GOES HERE</p>
-                                <p>Monthly Price: £FROM DATABASE GOES HERE</p>
-                            </div>
-                            <div id="paymentDetails" className="d-none">
-                                <p>Card Number: FROM DATABASE GOES HERE</p>
-                                <p>Card Type: FROM DATABASE GOES HERE</p>
-                                <p>Expiry Date: FROM DATABASE GOES HERE</p>
-                                <p>Holder Name: FROM DATABASE GOES HERE</p>
-                                <button onClick={ShowAddPaymentDetails}>
-                                    Add New
-                                </button>
-                            </div>
-                            <div id="addPaymentDetails" className="d-none">
-                                <PaymentDetails />
-                                <button onClick={ShowPaymentDetails}>
-                                    Save
-                                </button>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+            <div className="row">
 
+                <div className="col-1">
+                </div>
+
+                <div className="col-10">
+                    <div className="row">
+
+                        <div className="section">
+                            <Container fluid>
+                                <Row>
+                                    <Col>
+                                        <button onClick={ShowDetails}>My Details</button>
+                                        <br />
+                                        <button onClick={ShowSubscription}>My Subscriptions</button>
+                                        <br />
+                                        <button onClick={ShowPaymentDetails}>My PaymentDetails</button>
+                                    </Col>
+                                    <Col>
+                                        <div id="myDetails" className="">
+                                            <p>Name: FROM DATABASE GOES HERE</p>
+                                            <p>Address Line 1: FROM DATABASE GOES HERE</p>
+                                            <p>Address Line 2: FROM DATABASE GOES HERE</p>
+                                            <p>Town: FROM DATABASE GOES HERE</p>
+                                            <p>County: FROM DATABASE GOES HERE</p>
+                                            <p>Postcode: FROM DATABASE GOES HERE</p>
+                                            <p>Email: FROM DATABASE GOES HERE</p>
+                                        </div>
+                                        <div id="subscriptionDetails" className="d-none">
+                                            <p>Subscription Type: FROM DATABASE TYPE (COURSE NAME IF EXISTS)</p>
+                                            <p>Subscribed Since: FROM DATABASE GOES HERE</p>
+                                            <p>Monthly Price: £FROM DATABASE GOES HERE</p>
+                                        </div>
+                                        <div id="paymentDetails" className="d-none">
+                                            <p>Card Number: FROM DATABASE GOES HERE</p>
+                                            <p>Card Type: FROM DATABASE GOES HERE</p>
+                                            <p>Expiry Date: FROM DATABASE GOES HERE</p>
+                                            <p>Holder Name: FROM DATABASE GOES HERE</p>
+                                            <button onClick={ShowAddPaymentDetails}>
+                                                Add New
+                                            </button>
+                                        </div>
+                                        <div id="addPaymentDetails" className="d-none">
+                                            <PaymentDetails />
+                                            <button onClick={ShowPaymentDetails}>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-1">
+                </div>
+            </div>
             <Footer />
         </div>
     )

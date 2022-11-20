@@ -3,11 +3,15 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 function Subscription() {
     return (
 
         <div id="subscribtion">
+
+            <NavBar></NavBar>
 
 
             <div className="row">
@@ -26,7 +30,6 @@ function Subscription() {
                     <div className="row p-5">
                         <div className="col-md-4">
                             <Card style={{ width: '18rem' }} className="mx-auto text-center">
-                                <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
                                 <Card.Body>
                                     <Card.Text>One Game</Card.Text>
                                     <Card.Title>£12</Card.Title>
@@ -53,7 +56,6 @@ function Subscription() {
                         <div className="col-md-4">
 
                             <Card style={{ width: '18rem' }} className="mx-auto text-center">
-                                <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
                                 <Card.Body>
                                     <Card.Text>Multiple Games</Card.Text>
                                     <Card.Title>£30</Card.Title>
@@ -83,7 +85,6 @@ function Subscription() {
                         </div>
                         <div className="col-md-4">
                             <Card style={{ width: '18rem' }} className="mx-auto text-center">
-                                <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
                                 <Card.Body>
                                     <Card.Text>Unlimited Access</Card.Text>
                                     <Card.Title>£79</Card.Title>
@@ -112,14 +113,7 @@ function Subscription() {
 
                 </div>
             </div>
-
-
-
-
-
-
-
-
+            <Footer></Footer>
         </div>
     );
 }
