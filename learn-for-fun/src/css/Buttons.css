@@ -1,12 +1,12 @@
 .btn-primary {
     margin-left: 16px;
     text-decoration: none;
-    background-color: #4b23c3;
-    border-color: #500fab;
+    background-color: #2f348e;
+    border-color: #3953a4;
     border-radius: 9px;
-    --bs-btn-hover-color: #dcdc2b;
-    --bs-btn-hover-bg: #500fab;
-    --bs-btn-hover-border-color: #500fab;
+    --bs-btn-hover-color: #dac62a;
+    --bs-btn-hover-bg: #3953a4;
+    --bs-btn-hover-border-color: #3953a4;
 }
 
 .section button {
@@ -15,15 +15,15 @@
     align-items: center;
     text-decoration: none;
     color: white;
-    background-color: #4b23c3;
-    border-color: #500fab;
+    background-color: #2f348e;
+    border-color: #3953a4;
     border-radius: 9px;
 }
 
 .section button:hover {
-    color: #dcdc2b;
-    background-color: #4b23c3;
-    border-color: #500fab
+    color: #dac62a;
+    background-color: #2f348e;
+    border-color: #3953a4
 }
 
 .btn-secondary {
@@ -32,10 +32,10 @@
     align-items: center;
     text-decoration: none;
     color: white;
-    background-color: #4b23c3;
-    border-color: #500fab;
+    background-color: #2f348e;
+    border-color: #3953a4;
     border-radius: 9px;
-    --bs-btn-hover-color: #dcdc2b;
-    --bs-btn-hover-bg: #500fab;
-    --bs-btn-hover-border-color: #500fab;
+    --bs-btn-hover-color: #dac62a;
+    --bs-btn-hover-bg: #3953a4;
+    --bs-btn-hover-border-color: #3953a4;
 }
