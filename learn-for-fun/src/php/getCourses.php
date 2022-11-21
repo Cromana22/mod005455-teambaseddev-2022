@@ -5,10 +5,14 @@
     header("Access-Control-Allow-Methods: *");
     header("Access-Control-Allow-Headers: *");
 
-    $trp = mysqli_query($conn, "SELECT * from course");
+    $query = $connection->prepare("SELECT * FROM course"); 
+    $query->execute();
     $rows = array();
-    while($r = mysqli_fetch_assoc($trp)) {
-        $rows[] = $r;
+
+    while($row = $query->fetch())
+    {
+        $rows[] = $row;
     }
+
     print json_encode($rows); //convert php data to json data
 ?>
