@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2022 at 04:41 PM
+-- Generation Time: Nov 25, 2022 at 01:49 PM
 -- Server version: 5.7.17
--- PHP Version: 5.6.30
+-- PHP Version: 7.1.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -57,21 +57,21 @@ CREATE TABLE `subscription` (
   `subscriptionID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `dateRaised` date NOT NULL,
-  `subscriptionType` varchar(45) NOT NULL,
-  `courseID` int(11) NOT NULL
+  `SubscriptionTypeId` int(11) NOT NULL DEFAULT '1',
+  `courseID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `subscription`
 --
 
-INSERT INTO `subscription` (`subscriptionID`, `userID`, `dateRaised`, `subscriptionType`, `courseID`) VALUES
-(1, 3, '2022-11-09', 'Game development ', 1),
-(2, 3, '2022-11-14', 'Game development; Second part ', 2),
-(3, 2, '2022-11-14', 'Game development ', 1),
-(4, 2, '2022-11-15', 'Game development; Second part ', 2),
-(5, 3, '2022-11-17', 'Game development; Third part', 3),
-(6, 1, '2022-11-13', 'Game development ', 1);
+INSERT INTO `subscription` (`subscriptionID`, `userID`, `dateRaised`, `SubscriptionTypeId`, `courseID`) VALUES
+(1, 3, '2022-11-09', 1, 1),
+(2, 3, '2022-11-14', 1, 2),
+(3, 2, '2022-11-14', 1, 1),
+(4, 2, '2022-11-15', 1, 2),
+(5, 3, '2022-11-17', 1, 3),
+(6, 1, '2022-11-13', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -81,6 +81,7 @@ INSERT INTO `subscription` (`subscriptionID`, `userID`, `dateRaised`, `subscript
 
 CREATE TABLE `subscriptiontype` (
   `subscriptionTypeID` int(11) NOT NULL,
+  `subscriptionTypeName` varchar(20) NOT NULL DEFAULT 'SingleCourse',
   `price` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -88,13 +89,9 @@ CREATE TABLE `subscriptiontype` (
 -- Dumping data for table `subscriptiontype`
 --
 
-INSERT INTO `subscriptiontype` (`subscriptionTypeID`, `price`) VALUES
-(1, '5'),
-(2, '10'),
-(3, '5'),
-(4, '10'),
-(5, '15'),
-(6, '5');
+INSERT INTO `subscriptiontype` (`subscriptionTypeID`, `subscriptionTypeName`, `price`) VALUES
+(1, 'SingleCourse', '5'),
+(2, 'AllAccess', '10');
 
 -- --------------------------------------------------------
 
@@ -140,7 +137,8 @@ ALTER TABLE `course`
 ALTER TABLE `subscription`
   ADD PRIMARY KEY (`subscriptionID`),
   ADD KEY `sub to user id_idx` (`userID`),
-  ADD KEY `sub to course_idx` (`courseID`);
+  ADD KEY `sub to course_idx` (`courseID`),
+  ADD KEY `sub to sub type` (`SubscriptionTypeId`);
 
 --
 -- Indexes for table `subscriptiontype`
@@ -163,6 +161,7 @@ ALTER TABLE `user`
 --
 ALTER TABLE `subscription`
   ADD CONSTRAINT `sub to course` FOREIGN KEY (`courseID`) REFERENCES `course` (`courseID`),
+  ADD CONSTRAINT `sub to sub type` FOREIGN KEY (`SubscriptionTypeId`) REFERENCES `subscriptiontype` (`subscriptionTypeID`),
   ADD CONSTRAINT `sub to user id` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`);
 COMMIT;
 
