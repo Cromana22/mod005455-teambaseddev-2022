@@ -1,5 +1,4 @@
 import React from "react";
-import '../css/Footer.css';
 import Button from 'react-bootstrap/Button';
 
 function Footer() {

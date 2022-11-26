@@ -1,9 +1,8 @@
-import React from "react";
 import Button from "react-bootstrap/button"
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Form from 'react-bootstrap/Form';
-import { useState } from "react";
+import { React, useState } from "react";
 import { useParams, Link } from 'react-router-dom';
 import axios from "axios";
 
@@ -66,7 +65,7 @@ function Course() {
                                         <iframe src="https://www.youtube.com/embed/OR0e-1UBEOU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                     </div>
 
-                                    <div className="d-flex justify-content-between">
+                                    <div className="d-flex justify-content-between margin-top">
                                         <Link to="/files/guides.txt" target="_blank" download style={{ textDecoration: "none" }}>
                                             <Button className="btn btn-primary" variant="primary" id="downloadCodeButton">
                                                 <i className="bi bi-cloud-arrow-down"></i>
@@ -82,7 +81,7 @@ function Course() {
                                     </div>
                                 </div>
 
-                                <div className="border rounded" name="description">
+                                <div className="border rounded margin-top" name="description">
                                     <div className="fs-3 px-3 pt-3">Description</div>
                                     <hr />
                                     <div className="fs-5 px-3 pb-3">
@@ -155,8 +154,7 @@ function Course() {
                                                         </Form.Group>
                                                     </Form>
                                                     <div className="center">
-                                                        <br />
-                                                        <Button variant="primary" type="submit">
+                                                        <Button variant="primary" className="margin-top" type="submit">
                                                             Submit Review
                                                         </Button>
                                                     </div>
@@ -196,13 +194,12 @@ function Course() {
                                         <div className="center">
                                             {
                                                 subState == false
-                                                && <Button variant="primary">Unlock Course</Button>
+                                                && <Button variant="primary" className="margin-bottom">Unlock Course</Button>
                                             }
                                             {
                                                 subState == true
-                                                && <p className="success">Course Unlocked!</p>
+                                                && <p className="success margin-bottom">Course Unlocked!</p>
                                             }
-                                            <br /><br />
                                         </div>
                                     </div>
                                 </div>

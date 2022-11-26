@@ -5,7 +5,6 @@ import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import "../css/Signup.css";
 
 function Signup() {
   const [formEmail, setFormEmail] = useState("");

@@ -2,7 +2,6 @@ import { React, useState } from "react";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import GameCard from "./GameCard";
-import "../css/GameListPage.css";
 import gamesData from "../json/games.json";
 import axios from "axios";
 

@@ -1,9 +1,5 @@
 import { render } from "react-dom";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import Courses from "./components/Courses";
@@ -13,7 +9,7 @@ import AccountPage from "./components/AcountPage";
 import Subscription from "./components/Subscription";
 import GameListPage from "./components/GameListPage";
 import GamePage from "./components/GamePage";
-import './css/Buttons.css';
+import './index.css';
 
 const rootElement = document.getElementById("root");
 render(

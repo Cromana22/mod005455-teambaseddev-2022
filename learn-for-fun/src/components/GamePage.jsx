@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import Ratio from 'react-bootstrap/Ratio';
 import { useParams } from 'react-router';
 import gamesData from "../json/games.json";
-import "../css/GamePage.css";
 
 function GamePage() {
 
