@@ -9,10 +9,19 @@ import axios from "axios";
 function Course() {
     const [subState, setSubState] = useState(false);
     const [reviewInputText, setReviewInputText] = useState("");
-    const params = useParams();
     const [reviewWriteWordCount, setReviewWriteWordCount] = useState("0");
+    const params = useParams();
     const currentURL = window.location.href;
 
+    //courseTitle, youtube url, code filename, pdf filename
+    const [courseTitle, setCourseTitle] = useState("Course Title");
+    const [youTube, setYouTube] = useState("https://www.youtube.com/embed/nO3kTNIRqrA");
+    const [codeFileName, setCodeFileName] = useState("Code File Name");
+    const [pdfFileName, setPdfFileName] = useState("pdf File Name");
+    const [description, setDescription] = useState("Description");
+    const [reviewName, setReviewName] = useState("Description");
+    const [reviewContent, setReviewContent] = useState("Description");
+    
     //get subscriptions to check
     axios.get('http://localhost/getSubscriptions.php', {withCredentials: true}).then(res => {
         const subscriptions = res.data;
@@ -37,6 +46,18 @@ function Course() {
         };
     });
 
+    //get course details
+    axios.get('http://localhost/getCourse.php?course='+params.courseID).then(res => {
+        const course = res.data[0];
+        setCourseTitle(course.courseName);
+        setYouTube(course.youtubeURL);
+        setCodeFileName(course.codeFilename);
+        setPdfFileName(course.pdfFilename);
+        setDescription(course.description);
+        setReviewName(course.reviewName);
+        setReviewContent(course.reviewContent);
+    });
+
     return (
         <div className="">
             <NavBar></NavBar>
@@ -48,10 +69,9 @@ function Course() {
 
                     <div className="col-10">
 
-                        <div className="fs-5 pt-2">
-                            Course Title
+                        <div className="fs-2 pt-2 bold">
+                            {courseTitle} 
                         </div>
-
 
                         <hr />
                         <div className="row">
@@ -63,35 +83,22 @@ function Course() {
                                     }
 
                                     <div className="ratio ratio-16x9">
-                                        <iframe src="https://www.youtube.com/embed/OR0e-1UBEOU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                        <iframe src={youTube} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                     </div>
 
                                     <div className="d-flex justify-content-between margin-top">
-                                        <Link to="/files/guides.txt" target="_blank" download style={{ textDecoration: "none" }}>
+                                        <Link to={'../files/'+codeFileName} target="_blank" download style={{ textDecoration: "none" }}>
                                             <Button className="btn btn-primary" variant="primary" id="downloadCodeButton">
                                                 <i className="bi bi-cloud-arrow-down"></i>
                                                 Download Code
                                             </Button>
                                         </Link>
-                                        <Link to="/files/guides.txt" target="_blank" download style={{ textDecoration: "none" }}>
+                                        <Link to={'../files/'+pdfFileName} target="_blank" download style={{ textDecoration: "none" }}>
                                             <Button className="btn btn-primary" variant="primary" id="downloadGuideButton">
                                                 <i className="bi bi-file-earmark-pdf"></i>
                                                 Download Guide
                                             </Button>
                                         </Link>
-                                    </div>
-                                </div>
-
-                                <div className="border rounded margin-top" name="description">
-                                    <div className="fs-3 px-3 pt-3">Description</div>
-                                    <hr />
-                                    <div className="fs-5 px-3 pb-3">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum dapibus
-                                        eleifend. Donec tincidunt feugiat nunc. Quisque nec dolor pretium, sodales lacus ut,
-                                        posuere nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                        Curabitur aliquam massa in est imperdiet tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                                        Maecenas neque orci, pretium at aliquet eu, vestibulum id tortor. Fusce tincidunt dui at ligula congue imperdiet. Sed
-                                        tellus ante, fermentum ut ultricies sed, porttitor eu risus.
                                     </div>
                                 </div>
 
@@ -108,7 +115,7 @@ function Course() {
                                             <img src="https://i.imgur.com/8UdKNS4.jpeg" className="img-thumbnail" alt="profile"></img>
                                         </div>
                                         <div className="col-9">
-                                            <div className="fs-3">Username</div>
+                                            <div className="fs-3">{reviewName}</div>
                                             <div className="fs-5">
                                                 <div className="d-flex">
                                                     <i className="bi bi-star-fill"></i>
@@ -119,8 +126,7 @@ function Course() {
                                                 </div>
                                             </div>
                                             <div className="fs-5">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum dapibus eleifend.
-                                                 Donec tincidunt feugiat nunc. Quisque nec dolor pretium, sodales lacus ut, posuere nunc. Orci varius natoque p
+                                               {reviewContent}
                                             </div>
                                         </div>
 
@@ -172,24 +178,11 @@ function Course() {
                                 <div className="row pt-3" style={{ position: 'sticky', top: '0' }}>
                                     <div className="border rounded">
                                         <div className="fs-3 py-3 text-center">
-                                            Course title
+                                            Description
                                         </div>
                                         <hr />
-                                        <div className="fs-4 text-start">
-                                            Heading 1
-                                        </div>
-                                        <div className="fs-4 text-start">
-                                            Heading 2
-                                        </div>
-                                        <hr />
-                                        <div className="fs-5 text-center">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Cras fermentum dapibus eleifend. Donec tincidunt feugiat nunc.
-                                            Quisque nec dolor pretium, sodales lacus ut, posuere nunc. Orci varius
-                                            natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur
-                                            aliquam massa in est imperdiet tempus. Interdum et malesuada fames ac ante ipsum primis in
-                                            faucibus. Maecenas neque orci, pretium at aliquet eu, vestibulum id tortor. Fusce tincidunt dui at
-                                            ligula congue imperdiet. Sed tellus ante, fermentum ut ultricies sed, porttitor eu risus.
+                                        <div className="fs-5">
+                                            {description}
                                         </div>
                                         <hr />
                                         <div className="center">
