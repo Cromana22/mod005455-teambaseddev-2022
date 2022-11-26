@@ -9,6 +9,19 @@
     color: white;
     align-items: center;
     background-color: rgb(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+.sizing {
+    position: relative;
+}
+
+.success {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: green;
+    font-weight: bold;
+    color: white;
 }
 
 .overlay p {
@@ -19,4 +32,9 @@
     top: 50%;
     left: 50%;
     transform: rotate(50deg) translate(-40%, 170%);
+}
+
+.undoRotate {
+    transform: rotate(0deg) translate(-50%, -50%) !important;
+
 }

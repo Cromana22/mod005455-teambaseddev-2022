@@ -87,7 +87,7 @@ function NavBar() {
                                     {
                                         cookieLoggedIn == '' &&
                                         <Container fluid className="justify-content-center">
-                                            <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
+                                            <Nav.Link href="../login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
                                                 <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
                                                 <div className="nowrap">
                                                     Sign in
