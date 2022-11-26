@@ -12,7 +12,6 @@ function LoginPage() {
     const [formPassword, setFormPassword] = useState("");
     const [showPasswordBoolean, setShowPasswordBoolean] = useState(false);
     const [formPasswordType, setFormPasswordType] = useState("password");
-    const [loginMessage, setLoginMessage] = useState("");
     const navigate = useNavigate();
 
     function handleShowPasswordClick() {
@@ -27,20 +26,22 @@ function LoginPage() {
         }
     }
 
+    function handleLogin(validate) {
+        //if it works, redirect to home page, or throw error if fails
+        if (validate == "success") {
+            navigate("../");
+        }
+        else {
+            alert("Login Failed. Please try again.");
+        }
+    }
+
     function attemptLogin() {
         const data = [{email: formEmail, password: formPassword}];
 
-        axios.post('http://localhost/verifyLogin.php', data, {withCredentials: true}).then(res => {
-            setLoginMessage(res.data);
-            console.log(loginMessage);
-
-            //if it works, redirect to home page, or throw error if fails
-            if (loginMessage == "success") {
-                navigate("../");
-            }
-            else {
-                alert("Login Failed. Please try again.")
-            }
+        axios.post('http://localhost/verifyLogin.php', data, {withCredentials: true})
+        .then(res => {
+            handleLogin(res.data);
         });
     }
 

@@ -1,27 +1,43 @@
-import React from "react";
+import { React, useState } from "react";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import GameCard from "./GameCard";
 import "../css/GameListPage.css";
 import gamesData from "../json/games.json";
+import axios from "axios";
 
 function GameListPage() {
 
-    let gameslist = [];
+    const [subState, setSubState] = useState(false);
+    const [gamesList, setGamesList] = useState([]);
 
-    gamesData.forEach(game =>
-    {
-        gameslist.push(
-            <GameCard key={game.id} name={game.name} image={game.image} descript={game.description} cardId={game.id} />
-        );
-    })
+    //get subscriptions from database
+    axios.get('http://localhost/getSubscriptions.php', {withCredentials: true}).then(res => {
+        const subscriptions = res.data;
+
+        if (subscriptions.length > 0) {
+            setSubState(true);
+        };
+
+        let tempGamesList = [];
+        gamesData.forEach(game =>
+        {
+            tempGamesList.push(
+                <GameCard key={game.id} name={game.name} image={game.image} descript={game.description} cardId={game.id} subState={subState} />
+            );
+        });
+
+        setGamesList(tempGamesList);
+    });
+
+
 
     return (
         <div className="gamelist">
             <NavBar />
 
             <div className="container endSection cardlist row">
-                {gameslist}
+                {gamesList}
             </div>
 
             <Footer />
