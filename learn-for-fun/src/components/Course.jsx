@@ -21,14 +21,15 @@ function Course() {
         if (subscriptions.length > 0) {
 
             //if there is an all access subscription, set to subscribed
-            let count = subscriptions.filter((obj) => obj.subscriptionType === "AllAccess").length;
+            let count = subscriptions.filter((obj) => obj.subscriptionType == "AllAccess").length;
             if (count > 0){
                 setSubState(true);
             }
     
             //else check if the course is individually subscribed to
             else {
-                count = subscriptions.filter((obj) => obj.courseId === params).length;
+                count = subscriptions.filter((obj) => obj.courseId == params.courseID).length;
+
                 if (count > 0){
                     setSubState(true);
                 }
