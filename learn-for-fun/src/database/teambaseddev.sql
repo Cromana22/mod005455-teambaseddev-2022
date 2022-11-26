@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2022 at 01:49 PM
+-- Generation Time: Nov 26, 2022 at 07:37 PM
 -- Server version: 5.7.17
 -- PHP Version: 7.1.3
 
@@ -34,18 +34,20 @@ CREATE TABLE `course` (
   `youtubeURL` varchar(255) NOT NULL,
   `pdfFilename` varchar(255) NOT NULL,
   `codeFilename` varchar(255) NOT NULL,
-  `price` decimal(8,2) NOT NULL
+  `description` text NOT NULL,
+  `reviewName` varchar(50) NOT NULL,
+  `reviewContent` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`courseID`, `courseName`, `youtubeURL`, `pdfFilename`, `codeFilename`, `price`) VALUES
-(1, 'Blender: Your first tutorial part 1', 'https://www.youtube.com/watch?v=TPrnSACiTJ4', 'blenderpart1.pdf', 'code.py', '5.00'),
-(2, 'Blender: Your first tutorial part 2', 'https://www.youtube.com/watch?v=TPrnSACiTJ4', 'blenderpart2.pdf', 'code.py', '10.00'),
-(3, 'Blender: Your first tutorial part 3', 'https://www.youtube.com/watch?v=TPrnSACiTJ4', 'blenderpart3.pdf', 'code.py', '15.00'),
-(4, 'Blender: Your first tutorial part 4', 'https://www.youtube.com/watch?v=TPrnSACiTJ4', 'blenderpart4.pdf', 'code.py', '20.00');
+INSERT INTO `course` (`courseID`, `courseName`, `youtubeURL`, `pdfFilename`, `codeFilename`, `description`, `reviewName`, `reviewContent`) VALUES
+(1, 'Blender: Your first tutorial part 1', 'https://www.youtube.com/embed/TPrnSACiTJ4', 'blenderpart1.pdf', 'code1.py', 'Blender tutorial series showing you how to use the most common features, like modelling, lighting, materials, geometry nodes and rendering - whilst making a donut.', 'John Smith', 'Sooooo useful! Definitely recommend!'),
+(2, 'Blender: Your first tutorial part 2', 'https://www.youtube.com/embed/imdYIdv8F4w', 'blenderpart2.pdf', 'code2.py', 'Blender tutorial showing you how to add objects and edit them with proportional falloff. Part 2 of the donut series.', 'Barbara Smiley', 'Can\'t stand this guy. But I\'ll give it 5 stars anyway for trying.'),
+(3, 'Blender: Your first tutorial part 3', 'https://www.youtube.com/embed/7wKnPclzYY8', 'blenderpart3.pdf', 'code3.py', 'Blender tutorial showing you how to use modifiers, extrusion and other modelling tools. ', 'John Bishop', 'Good.'),
+(4, 'Blender: Your first tutorial part 4', 'https://www.youtube.com/embed/R1isb0x4zYw', 'blenderpart4.pdf', 'code4.py', 'Blender tutorial showing you how to use snapping, shrinkwrap and modifier stacks.', 'Ella Roe', 'Can\'t understand his accent, but with subtitles on it helped immensely!');
 
 -- --------------------------------------------------------
 
@@ -71,7 +73,8 @@ INSERT INTO `subscription` (`subscriptionID`, `userID`, `dateRaised`, `Subscript
 (3, 2, '2022-11-14', 1, 1),
 (4, 2, '2022-11-15', 1, 2),
 (5, 3, '2022-11-17', 1, 3),
-(6, 1, '2022-11-13', 2, NULL);
+(6, 1, '2022-11-13', 2, NULL),
+(16, 2, '2022-11-26', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -90,8 +93,8 @@ CREATE TABLE `subscriptiontype` (
 --
 
 INSERT INTO `subscriptiontype` (`subscriptionTypeID`, `subscriptionTypeName`, `price`) VALUES
-(1, 'SingleCourse', '5'),
-(2, 'AllAccess', '10');
+(1, 'SingleCourse', '12'),
+(2, 'AllAccess', '79');
 
 -- --------------------------------------------------------
 
@@ -152,6 +155,15 @@ ALTER TABLE `subscriptiontype`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userID`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `subscription`
+--
+ALTER TABLE `subscription`
+  MODIFY `subscriptionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- Constraints for dumped tables
 --

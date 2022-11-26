@@ -176,6 +176,10 @@ img {
 .margin-bottom {
   margin-bottom: 20px;
 }
+
+.bold {
+  font-weight: bolder;
+}
 /* #endregion */
 
 /* #region - home page specific css*/
