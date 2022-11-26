@@ -7,7 +7,6 @@ import { useParams, Link } from 'react-router-dom';
 import axios from "axios";
 
 function Course() {
-
     const [subState, setSubState] = useState(false);
     const [reviewInputText, setReviewInputText] = useState("");
     const params = useParams();
@@ -194,7 +193,7 @@ function Course() {
                                         <div className="center">
                                             {
                                                 subState == false
-                                                && <Button variant="primary" className="margin-bottom">Unlock Course</Button>
+                                                && <Button variant="primary" className="margin-bottom" style={{color: 'white'}} href='../subscribe'>Unlock Course</Button>
                                             }
                                             {
                                                 subState == true

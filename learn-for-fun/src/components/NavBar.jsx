@@ -8,6 +8,7 @@ import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+
 function NavBar() {
 
     const [cookieEmail, setCookieEmail] = useState("");
@@ -40,7 +41,7 @@ function NavBar() {
                     <Navbar bg="light" expand="lg">
                         <Container fluid style={{ padding: '0' }}>
                             <Navbar.Brand>
-                                <Link to='../'><img src="LOGO99.png" alt="Learn4Fun logo" width={150} /></Link>
+                                <Link to='../'><img src={require("../images/logo.png")} alt="Learn4Fun logo" width={150} /></Link>
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="navbarScroll" />
                             <Navbar.Collapse id="navbarScroll">

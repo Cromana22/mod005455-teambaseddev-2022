@@ -18,8 +18,8 @@ render(
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<Signup />} />
-      <Route path="/subscription" element={<Subscription />} />
       <Route path="/course/:courseID" element={<Course />} />
+      <Route path="/subscribe" element={<Subscription />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/myaccount" element={<AccountPage />} />
       <Route path="/games" element={<GameListPage />} />
