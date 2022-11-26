@@ -4,17 +4,14 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import { redirect, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-
 
 function Subscription() {
     const navigate = useNavigate();
     const courseId = useParams();
     const [courseName, setCourseName] = useState("");
-    const resetUrl = '..../'+window.location.href.replace("/subscribe", "");
     const url = 'http://localhost/getCourse.php?course='+courseId.courseID;
 
     function SingleSubsription() {
@@ -23,7 +20,7 @@ function Subscription() {
         axios.get(url2, {withCredentials: true}).then(res => {
             if (res.data == 'success') {
                 alert("Thank you for subscribing!");
-                navigate(resetUrl);
+                navigate(-1);
             }
             else {
                 alert("Subscription Failed. Please ensure you are logged in.");
