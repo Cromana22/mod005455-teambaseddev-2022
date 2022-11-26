@@ -4,7 +4,6 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import HomeCarousel from "./carousel";
 import {Button, Card} from 'react-bootstrap';
-import "../css/HomePage.css";
 
 function HomePage() {
     return (

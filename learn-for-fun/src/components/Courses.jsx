@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
-import "bootstrap-icons/font/bootstrap-icons.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 import axios from 'axios';
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 class Courses extends React.Component {
 
@@ -20,9 +20,7 @@ class Courses extends React.Component {
     componentDidMount() {
         //get data from database
         axios.get('http://localhost/getCourses.php').then(res => {
-
             this.setState({ data: res.data });
-            console.log(this.state.data)
         });
 
     }

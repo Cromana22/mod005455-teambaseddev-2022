@@ -5,7 +5,9 @@
     header("Access-Control-Allow-Methods: *");
     header("Access-Control-Allow-Headers: *");
 
-    $query = $connection->prepare("SELECT * FROM course"); 
+    $courseId = $_GET['course'];
+
+    $query = $connection->prepare("SELECT * FROM course WHERE courseId = '" .$courseId. "'"); 
     $query->execute();
     $rows = array();
 

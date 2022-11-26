@@ -51,7 +51,7 @@
 	{
 		"id": "DailySudoku",
 		"name": "Daily Sudoku",
-		"description": "Every day a new Sudoku in 4 difficulty levels. Solve according to the sudoku rules: a number (from 1-9) can only be used once in every row, column or 3x3 box.",
+		"description": "Every day a new Sudoku in 4 difficulty levels. A number (from 1-9) can only be used once in every row, column or 3x3 box.",
 		"link": "https://cdn.htmlgames.com/DailySudoku/",
 		"image":  "https://www.htmlgames.com/uploaded/game/thumb/dailysudoku300x200.jpg"
 	}

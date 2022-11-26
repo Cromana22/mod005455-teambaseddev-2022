@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "../css/NavBar.css";
 import SearchBar from "./searchBarNav.jsx";
 import axios from "axios";
 import Button from 'react-bootstrap/Button';
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 function NavBar() {
 
@@ -23,6 +23,9 @@ function NavBar() {
         axios.get('http://localhost/logout.php', {withCredentials: true}).then(res => {
             setCookieEmail("");
             setCookieLoggedIn("");
+
+            let reload = window.location.href;
+            location.href = reload; 
         });
     }
 
@@ -38,7 +41,7 @@ function NavBar() {
                     <Navbar bg="light" expand="lg">
                         <Container fluid style={{ padding: '0' }}>
                             <Navbar.Brand>
-                                <Link to='../'><img src="LOGO99.png" alt="Learn4Fun logo" width={150} /></Link>
+                                <Link to='../'><img src={require("../images/logo.png")} alt="Learn4Fun logo" width={150} /></Link>
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="navbarScroll" />
                             <Navbar.Collapse id="navbarScroll">
@@ -84,7 +87,7 @@ function NavBar() {
                                     {
                                         cookieLoggedIn == '' &&
                                         <Container fluid className="justify-content-center">
-                                            <Nav.Link href="login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
+                                            <Nav.Link href="../login" className="align-items-center text-center" style={{ verticalAlign: 'middle' }}>
                                                 <i className="bi bi-person-circle mx-auto fs-5" style={{ width: "inherit" }}></i>
                                                 <div className="nowrap">
                                                     Sign in

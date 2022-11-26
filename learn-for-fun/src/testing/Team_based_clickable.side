@@ -1,0 +1,432 @@
+{
+  "id": "821596cf-aa71-49b1-800f-cf296b2a8ecb",
+  "version": "2.0",
+  "name": "Team based",
+  "url": "http://localhost:3000/",
+  "tests": [{
+    "id": "a2f7def0-231a-4328-bffc-e04d28f2b1b7",
+    "name": "clickable links",
+    "commands": [{
+      "id": "f24e8e9a-b39d-4724-b522-e42d5f44df27",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d6442a5b-ad09-4938-8f76-3fc8196043d0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.text-center:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/')])[2]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "254b3f5a-82d7-4158-b0c0-6d8300926994",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Courses",
+      "targets": [
+        ["linkText=Courses", "linkText"],
+        ["css=.text-center:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Courses')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/courses')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Courses')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e389b36d-a16b-406d-84c6-761a6cfa081c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Games",
+      "targets": [
+        ["linkText=Games", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Games')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/games')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e92b190f-83b7-453d-9201-24fbada5b74a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gameCards:nth-child(1) .card-img-top",
+      "targets": [
+        ["css=.gameCards:nth-child(1) .card-img-top", "css:finder"],
+        ["xpath=//img[contains(@src,'https://www.htmlgames.com/uploaded/game/thumb/strongholdsolitaire300200.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div[2]/div/a/div/img", "xpath:idRelative"],
+        ["xpath=//div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db249863-f7cb-48ea-bad4-a60931d9cb13",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Games",
+      "targets": [
+        ["linkText=Games", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Games')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/games')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fd34053-9ba4-434f-acce-f628dc066be2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gameCards:nth-child(2) .card-img-top",
+      "targets": [
+        ["css=.gameCards:nth-child(2) .card-img-top", "css:finder"],
+        ["xpath=//img[contains(@src,'https://www.htmlgames.com/uploaded/game/thumb/pinball300.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/a/div/img", "xpath:idRelative"],
+        ["xpath=//div[2]/a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb0afcb3-d727-4d2a-ad54-4ca745b4c434",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Games",
+      "targets": [
+        ["linkText=Games", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Games')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/games')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "01a54b9a-e05e-43a7-a228-4e9c7f895ca9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gameCards:nth-child(3) .card-img-top",
+      "targets": [
+        ["css=.gameCards:nth-child(3) .card-img-top", "css:finder"],
+        ["xpath=//img[contains(@src,'https://www.htmlgames.com/uploaded/game/thumb/classicpac300200.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div[2]/div[3]/a/div/img", "xpath:idRelative"],
+        ["xpath=//div[3]/a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a6b6932-4c80-40b0-9f68-4f5fcb6448b1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Games",
+      "targets": [
+        ["linkText=Games", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Games')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/games')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d5636132-c112-42ea-9beb-4edb038a64af",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gameCards:nth-child(4) .card-img-top",
+      "targets": [
+        ["css=.gameCards:nth-child(4) .card-img-top", "css:finder"],
+        ["xpath=//img[contains(@src,'https://www.htmlgames.com/uploaded/game/thumb/hiddenspotscastles300200.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div[2]/div[4]/a/div/img", "xpath:idRelative"],
+        ["xpath=//div[4]/a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db57c373-7646-4fe7-9c71-9b98eeb6b436",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Games",
+      "targets": [
+        ["linkText=Games", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Games')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/games')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "427e2aba-9eae-4ca1-92d9-e77af7c7dd06",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gameCards:nth-child(6) .card-img-top",
+      "targets": [
+        ["css=.gameCards:nth-child(6) .card-img-top", "css:finder"],
+        ["xpath=//img[contains(@src,'https://www.htmlgames.com/uploaded/game/thumb/mahjongmix300200.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div[2]/div[6]/a/div/img", "xpath:idRelative"],
+        ["xpath=//div[6]/a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "191d140b-88b6-4637-9a3d-4ae6ddca4ff6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Games",
+      "targets": [
+        ["linkText=Games", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Games')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/games')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2af9f713-ba3b-45bf-95e2-3ddfa3f0fc22",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gameCards:nth-child(5) .card-img-top",
+      "targets": [
+        ["css=.gameCards:nth-child(5) .card-img-top", "css:finder"],
+        ["xpath=//img[contains(@src,'https://www.htmlgames.com/uploaded/game/thumb/retrobricks300200.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div[2]/div[5]/a/div/img", "xpath:idRelative"],
+        ["xpath=//div[5]/a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "127e94d0-2e5a-425a-a6ca-2923bd5fde88",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Games",
+      "targets": [
+        ["linkText=Games", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Games')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/games')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e93a22a-485d-47bd-bb36-a1d007d8f924",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gameCards:nth-child(8) .card-img-top",
+      "targets": [
+        ["css=.gameCards:nth-child(8) .card-img-top", "css:finder"],
+        ["xpath=//img[contains(@src,'https://www.htmlgames.com/uploaded/game/thumb/dailysudoku300x200.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div[2]/div[8]/a/div/img", "xpath:idRelative"],
+        ["xpath=//div[8]/a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c214c83-ac7e-408c-aaac-fb76867b8c8c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Games",
+      "targets": [
+        ["linkText=Games", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Games')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/games')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "625af81e-8adf-43fe-b8e1-2957e2dc3240",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gameCards:nth-child(7) .card-img-top",
+      "targets": [
+        ["css=.gameCards:nth-child(7) .card-img-top", "css:finder"],
+        ["xpath=//img[contains(@src,'https://www.htmlgames.com/uploaded/game/thumb/cats1010300200.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div[2]/div[7]/a/div/img", "xpath:idRelative"],
+        ["xpath=//div[7]/a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "363d014a-217d-4d92-9c1b-4917382ae798",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0"]
+      ],
+      "value": ""
+    }, {
+      "id": "118b1bf6-4ead-4bd3-86f2-fab03e3dbfc1",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) > .btnumber",
+      "targets": [
+        ["css=div:nth-child(3) > .btnumber", "css:finder"],
+        ["xpath=//div[@id='gameContainer']/div[3]/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d29cdc8b-19b4-428c-8cc0-7091aaa898c6",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "relative=parent",
+      "targets": [
+        ["relative=parent"]
+      ],
+      "value": ""
+    }, {
+      "id": "563a64df-99d1-4795-8ce1-7fb786f12e29",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.text-center:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/')])[2]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc6214b1-6880-4c74-a0b9-edb4593f3e7d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Subscribe",
+      "targets": [
+        ["linkText=Subscribe", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Subscribe')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[4]/div[4]/button/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/subscription')]", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Subscribe')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "785fa0ff-413e-4e76-8a57-9a90b6d11b5a",
+      "comment": "",
+      "command": "click",
+      "target": "id=dropdown-basic",
+      "targets": [
+        ["id=dropdown-basic", "id"],
+        ["css=.col-md-4:nth-child(1) #dropdown-basic", "css:finder"],
+        ["xpath=//button[@id='dropdown-basic']", "xpath:attributes"],
+        ["xpath=//div[@id='subscribtion']/div[2]/div[2]/div[3]/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Choose Game')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9f53bd0-447a-451e-937a-35be3f65c81a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Action Games",
+      "targets": [
+        ["linkText=Action Games", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Action Games')]", "xpath:link"],
+        ["xpath=//div[@id='subscribtion']/div[2]/div[2]/div[3]/div/div/div/div[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Action Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbf06d5f-6c18-4700-9a8c-0dc9a3b4d255",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='dropdown-basic'])[2]",
+      "targets": [
+        ["xpath=(//button[@id='dropdown-basic'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='subscribtion']/div[2]/div[2]/div[3]/div[2]/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "faeca931-75ea-4d30-bbc8-58b041eb866e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "xpath=(//button[@id='dropdown-basic'])[2]",
+      "targets": [
+        ["xpath=(//button[@id='dropdown-basic'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='subscribtion']/div[2]/div[2]/div[3]/div[2]/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6aeb3dbb-f5b6-40f6-b522-4b24961f4be3",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "xpath=(//button[@id='dropdown-basic'])[2]",
+      "targets": [
+        ["xpath=(//button[@id='dropdown-basic'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='subscribtion']/div[2]/div[2]/div[3]/div[2]/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e43c838-442d-4317-b6a8-6da4db2cf010",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(2) .card-body > .btn",
+      "targets": [
+        ["css=.col-md-4:nth-child(2) .card-body > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='subscribtion']/div[2]/div[2]/div[3]/div[2]/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0734bbe7-54c3-4721-a8c9-61193d3b8675",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(1) .card-body > .btn",
+      "targets": [
+        ["css=.col-md-4:nth-child(1) .card-body > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='subscribtion']/div[2]/div[2]/div[3]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Subscribe')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c49ceac8-d1b6-40b2-82c4-62263428131c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(3) .btn",
+      "targets": [
+        ["css=.col-md-4:nth-child(3) .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//div[@id='subscribtion']/div[2]/div[2]/div[3]/div[3]/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "165b3563-1770-4516-bd6f-2f46c3c0d4a1",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
