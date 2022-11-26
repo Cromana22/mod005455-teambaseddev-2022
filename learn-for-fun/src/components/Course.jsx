@@ -11,6 +11,7 @@ function Course() {
     const [reviewInputText, setReviewInputText] = useState("");
     const params = useParams();
     const [reviewWriteWordCount, setReviewWriteWordCount] = useState("0");
+    const currentURL = window.location.href;
 
     //get subscriptions to check
     axios.get('http://localhost/getSubscriptions.php', {withCredentials: true}).then(res => {
@@ -193,7 +194,7 @@ function Course() {
                                         <div className="center">
                                             {
                                                 subState == false
-                                                && <Button variant="primary" className="margin-bottom" style={{color: 'white'}} href='../subscribe'>Unlock Course</Button>
+                                                && <Button variant="primary" className="margin-bottom" style={{color: 'white'}} href={currentURL+'/subscribe'}>Unlock Course</Button>
                                             }
                                             {
                                                 subState == true

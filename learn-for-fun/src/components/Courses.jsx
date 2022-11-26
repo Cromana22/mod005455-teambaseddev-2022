@@ -20,9 +20,7 @@ class Courses extends React.Component {
     componentDidMount() {
         //get data from database
         axios.get('http://localhost/getCourses.php').then(res => {
-
             this.setState({ data: res.data });
-            console.log(this.state.data)
         });
 
     }
