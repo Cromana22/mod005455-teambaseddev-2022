@@ -1,10 +1,10 @@
 <?php
     require 'database.php';
-
+    
     header("Access-Control-Allow-Origin: http://localhost:3000");
-    header('Access-Control-Allow-Headers: content-type');
-    header('Access-Control-Allow-Credentials: true');
-
+    header("Access-Control-Allow-Methods: *");
+    header("Access-Control-Allow-Headers: *");
+    
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata, true);
     $array = $request[0];

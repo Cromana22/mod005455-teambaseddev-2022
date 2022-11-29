@@ -11,6 +11,7 @@ import GameListPage from "./components/GameListPage";
 import GamePage from "./components/GamePage";
 import './index.css';
 
+
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>

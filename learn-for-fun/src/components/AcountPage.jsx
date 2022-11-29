@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PaymentDetails from "./PaymentDetails";
+import { render } from "react-dom";
+import axios from "axios";
 
 function ShowDetails() {
     const myDetails = document.getElementById("myDetails");
@@ -50,71 +52,97 @@ function ShowAddPaymentDetails() {
     paymentDetails.classList.add("d-none");
 }
 
-function AccountPage() {
-    return (
-        <div id="accountPage">
-            <NavBar />
 
-            <div className="row">
+class AccountPage extends React.Component {
 
-                <div className="col-1">
-                </div>
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: []
+        }
+    }
 
-                <div className="col-10">
-                    <div className="row">
 
-                        <div className="section">
-                            <Container fluid>
-                                <Row>
-                                    <Col>
-                                        <button onClick={ShowDetails}>My Details</button>
-                                        <br />
-                                        <button onClick={ShowSubscription}>My Subscriptions</button>
-                                        <br />
-                                        <button onClick={ShowPaymentDetails}>My PaymentDetails</button>
-                                    </Col>
-                                    <Col>
-                                        <div id="myDetails" className="">
-                                            <p>Name: FROM DATABASE GOES HERE</p>
-                                            <p>Address Line 1: FROM DATABASE GOES HERE</p>
-                                            <p>Address Line 2: FROM DATABASE GOES HERE</p>
-                                            <p>Town: FROM DATABASE GOES HERE</p>
-                                            <p>County: FROM DATABASE GOES HERE</p>
-                                            <p>Postcode: FROM DATABASE GOES HERE</p>
-                                            <p>Email: FROM DATABASE GOES HERE</p>
-                                        </div>
-                                        <div id="subscriptionDetails" className="d-none">
-                                            <p>Subscription Type: FROM DATABASE TYPE (COURSE NAME IF EXISTS)</p>
-                                            <p>Subscribed Since: FROM DATABASE GOES HERE</p>
-                                            <p>Monthly Price: £FROM DATABASE GOES HERE</p>
-                                        </div>
-                                        <div id="paymentDetails" className="d-none">
-                                            <p>Card Number: FROM DATABASE GOES HERE</p>
-                                            <p>Card Type: FROM DATABASE GOES HERE</p>
-                                            <p>Expiry Date: FROM DATABASE GOES HERE</p>
-                                            <p>Holder Name: FROM DATABASE GOES HERE</p>
-                                            <button onClick={ShowAddPaymentDetails}>
-                                                Add New
-                                            </button>
-                                        </div>
-                                        <div id="addPaymentDetails" className="d-none">
-                                            <PaymentDetails />
-                                            <button onClick={ShowPaymentDetails}>
-                                                Save
-                                            </button>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Container>
+    componentDidMount() {
+        //get data from database
+        axios.get('http://localhost/myAccount.php').then(res => {
+            this.setState({ data: res.data });
+        });
+
+    }
+    render() {
+        return (
+            <div id="accountPage">
+                <NavBar />
+
+                <div className="row">
+
+                    <div className="col-1">
+                    </div>
+
+                    <div className="col-10">
+                        <div className="row">
+
+                            <div className="section">
+                                <Container fluid>
+                                    <Row>
+                                        <Col>
+                                            <button onClick={ShowDetails}>My Details</button>
+                                            <br />
+                                            <button onClick={ShowSubscription}>My Subscriptions</button>
+                                            <br />
+                                            <button onClick={ShowPaymentDetails}>My PaymentDetails</button>
+                                        </Col>
+                                        {this.state.data.map((result) => {
+                                            return (
+                                                <Col>
+
+                                                    <div id="myDetails" className="">
+                                                        <p>Name: {result.firstName} {result.lastName}</p>
+                                                        <p>Address Line 1: {result.address1}</p>
+                                                        <p>Address Line 2: {result.address2}</p>
+                                                        <p>City: {result.city}</p>
+                                                        <p>County: {result.county}</p>
+                                                        <p>Postcode: {result.postcode}</p>
+                                                        <p>Email: {result.email}</p>
+                                                    </div>
+                                                    <div id="subscriptionDetails" className="d-none">
+                                                        <p>Subscription Type: {result.courseName}</p>
+                                                        <p>Subscribed Since: {result.dateRaised}</p>
+                                                        <p>Monthly Price: £{result.price}</p>
+                                                    </div>
+                                                    <div id="paymentDetails" className="d-none">
+                                                        <p>Card Number: {result.cardNumber}</p>
+                                                        <p>Card Type: {result.cardType}</p>
+                                                        <p>Expiry Date: {result.expirationDate}</p>
+                                                        <p>Holder Name: {result.cardHolderName}</p>
+                                                        <button onClick={ShowAddPaymentDetails}>
+                                                            Add New
+                                                        </button>
+                                                    </div>
+                                                    <div id="addPaymentDetails" className="d-none">
+                                                        <PaymentDetails />
+                                                        <button onClick={ShowPaymentDetails}>
+                                                            Save
+                                                        </button>
+                                                    </div>
+
+                                                </Col>
+                                            )
+                                        })}
+                                    </Row>
+                                </Container>
+                            </div>
                         </div>
                     </div>
+                    <div className="col-1">
+                    </div>
                 </div>
-                <div className="col-1">
-                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
-    )
+        )
+    }
 }
+
 
 export default AccountPage;

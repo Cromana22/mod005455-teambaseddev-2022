@@ -25,7 +25,7 @@ function NavBar() {
             setCookieLoggedIn("");
 
             let reload = window.location.href;
-            location.href = reload; 
+           
         });
     }
 

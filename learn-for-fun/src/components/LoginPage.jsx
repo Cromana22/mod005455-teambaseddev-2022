@@ -40,6 +40,7 @@ function LoginPage() {
 
         axios.post('http://localhost/verifyLogin.php', data, {withCredentials: true})
         .then(res => {
+            
             handleLogin(res.data);
         });
     }

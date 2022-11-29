@@ -102,12 +102,12 @@ class Courses extends React.Component {
                                                                     <i className="bi bi-star"></i> 4.5
                                                                 </div>
                                                             </div>
-                                                            <div className="col-3">
+                                                            <div className="col-4">
                                                                 <div className="bg-secondary text-white p-1 rounded" >
                                                                     <span className="bi bi-eye"></span> 200k
                                                                 </div>
                                                             </div>
-                                                            <div className="col-4">
+                                                            <div className="col-3">
                                                                 <div className="bg-dark text-white"></div>
                                                             </div>
 
