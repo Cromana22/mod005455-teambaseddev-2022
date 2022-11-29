@@ -13,7 +13,8 @@ class Courses extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: []
+            data: [],
+            spinnerCourseClassName: "text-center"
         }
     }
 
@@ -21,6 +22,7 @@ class Courses extends React.Component {
         //get data from database
         axios.get('http://localhost/getCourses.php').then(res => {
             this.setState({ data: res.data });
+            this.setState({spinnerCourseClassName: "d-none"});
         });
 
     }
@@ -63,7 +65,16 @@ class Courses extends React.Component {
                                 </div>
                             </div>
 
-                            <div className="py-3"></div>
+                            <div className="py-3">
+
+                                <div className={this.state.spinnerCourseClassName} id="spinnerCourses">
+                                    <div className="spinner-border" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
 
                             {this.state.data.map((result) => {
                                 return (
