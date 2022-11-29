@@ -1,5 +1,11 @@
 import React from 'react';
 
+function getCourseOptions()
+{
+
+}
+
+
 function SearchBar() {
     return (
 
@@ -18,7 +24,8 @@ function SearchBar() {
                                     type="text"
                                     placeholder="Search for courses..."
                                     id="search"
-                                    name="search">
+                                    name="searchBar" onChange={(e) => localStorage.setItem("searchBarInput", (e.target.value))}
+                                    onSubmit={getCourseOptions()}>
                                 </input>
                             </div>
                             <button

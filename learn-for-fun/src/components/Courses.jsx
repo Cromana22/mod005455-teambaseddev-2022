@@ -14,7 +14,8 @@ class Courses extends React.Component {
         super(props)
         this.state = {
             data: [],
-            spinnerCourseClassName: "text-center"
+            spinnerCourseClassName: "text-center",
+            searchedRecipe: ""
         }
     }
 
@@ -22,10 +23,14 @@ class Courses extends React.Component {
         //get data from database
         axios.get('http://localhost/getCourses.php').then(res => {
             this.setState({ data: res.data });
-            this.setState({spinnerCourseClassName: "d-none"});
+            this.setState({ spinnerCourseClassName: "d-none" });
         });
 
     }
+
+
+
+   
 
     render() {
         return (
