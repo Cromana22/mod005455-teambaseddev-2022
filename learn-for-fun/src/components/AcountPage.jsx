@@ -65,7 +65,7 @@ class AccountPage extends React.Component {
         }
     }
 
-    
+
 
 
     componentDidMount() {
@@ -108,30 +108,37 @@ class AccountPage extends React.Component {
                                         <Col>
                                             {this.state.userData.map((result) => {
                                                 return (
+
+
+
+
                                                     <div key={result.firstName} id="myDetails" className="border rounded p-3">
                                                         <div className="fw-bold fs-5">
                                                             Name
                                                         </div>
                                                         <div className="d-flex py-2">
-                                                            
-                                                            <input className="rounded" type="text" 
-                                                            defaultValue={result.firstName} placeholder="First name"></input>
+
+                                                            <input className="rounded" type="text"
+                                                                defaultValue={result.firstName} placeholder="First name"></input>
                                                             <div className="px-4"></div>
                                                             <input className="rounded" type="text" defaultValue={result.lastName}
-                                                            placeholder="Last name"></input>
+                                                                placeholder="Last name"></input>
                                                         </div>
 
-                                                        <div className="py-2">
+                                                        <div className="py-2 d-flex">
                                                             <div className="fs-5 fw-bold">Address Line 1</div>
-                                                            <input className="rounded" type="text" placeholder="Address 1" defaultValue={result.address1}></input>
+                                                            <div className="px-5"></div>
+                                                            <div className="fs-5 fw-bold">Address Line 2</div>
 
                                                         </div>
 
-                                                        <div className="py-2">
-                                                            <div className="fs-5 fw-bold">Address Line 2</div>
+                                                        <div className="py-2 d-flex">
+                                                            <input className="rounded" type="text" placeholder="Address 1" defaultValue={result.address1}></input>
+                                                            <div className="px-4"></div>
                                                             <input className="rounded" type="text" placeholder="Address 2" defaultValue={result.address2}></input>
 
                                                         </div>
+
                                                         <div className="py-2">
                                                             <div className="fs-5 fw-bold">City</div>
                                                             <input className="rounded" type="text" placeholder="City" defaultValue={result.city}></input>
@@ -146,7 +153,7 @@ class AccountPage extends React.Component {
 
                                                         <div className="py-2">
                                                             <div className="fs-5 fw-bold">Postcode</div>
-                                                            <input className="rounded" type="text" placeholder="Postcode"  defaultValue={result.postcode}></input>
+                                                            <input className="rounded" type="text" placeholder="Postcode" defaultValue={result.postcode}></input>
 
                                                         </div>
                                                         <div className="py-2">
@@ -160,8 +167,6 @@ class AccountPage extends React.Component {
                                                     </div>
                                                 )
                                             })}
-
-
                                             <div id="subscriptionDetails" className="d-none">
                                                 {this.state.subData.map((result) => {
                                                     return (
@@ -211,6 +216,7 @@ class AccountPage extends React.Component {
                     <div className="col-1">
                     </div>
                 </div>
+
                 <Footer />
             </div>
         )
