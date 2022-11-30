@@ -1,7 +1,32 @@
 import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
-       
+import { useState } from "react";
+
+
+
+
+
+
 function PaymentDetails() {
+  const [ccNumber, setCcNumber] = useState("");
+ // https://stackoverflow.com/questions/65454587/how-to-make-autospace-after-every-4-digit-in-react
+  const formatAndSetCcNumber = e => {
+    const inputVal = e.target.value.replace(/ /g, ""); 
+    let inputNumbersOnly = inputVal.replace(/\D/g, ""); 
+
+    if (inputNumbersOnly.length > 16) {
+      inputNumbersOnly = inputNumbersOnly.substr(0, 16);
+    }
+
+    const splits = inputNumbersOnly.match(/.{1,4}/g);
+
+    let spacedNumber = "";
+    if (splits) {
+      spacedNumber = splits.join(" ");
+    }
+
+    setCcNumber(spacedNumber);
+  };
   return (
     <div>
       <div className="mx-auto">
@@ -17,7 +42,9 @@ function PaymentDetails() {
           <div className="form-group">
             <label >Card number</label>
             <div className="input-group">
-              <input type="text" name="cardNumber" placeholder="Your card number" className="form-control" required />
+              <input type="text" value={ccNumber} onChange={formatAndSetCcNumber}
+                name="cardNumber" placeholder="Your card number" className="form-control" required />
+      
             </div>
           </div>
 
@@ -35,8 +62,8 @@ function PaymentDetails() {
             <div className="col-sm-4">
               <div className="form-group mb-4">
                 <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
-                                            <i className="fa fa-question-circle"></i>
-                                        </label>
+                  <i className="fa fa-question-circle"></i>
+                </label>
                 <input type="text" required className="form-control" />
               </div>
             </div>
