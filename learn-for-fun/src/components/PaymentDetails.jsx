@@ -9,10 +9,10 @@ import { useState } from "react";
 
 function PaymentDetails() {
   const [ccNumber, setCcNumber] = useState("");
- // https://stackoverflow.com/questions/65454587/how-to-make-autospace-after-every-4-digit-in-react
+  // https://stackoverflow.com/questions/65454587/how-to-make-autospace-after-every-4-digit-in-react
   const formatAndSetCcNumber = e => {
-    const inputVal = e.target.value.replace(/ /g, ""); 
-    let inputNumbersOnly = inputVal.replace(/\D/g, ""); 
+    const inputVal = e.target.value.replace(/ /g, "");
+    let inputNumbersOnly = inputVal.replace(/\D/g, "");
 
     if (inputNumbersOnly.length > 16) {
       inputNumbersOnly = inputNumbersOnly.substr(0, 16);
@@ -27,6 +27,13 @@ function PaymentDetails() {
 
     setCcNumber(spacedNumber);
   };
+
+
+  const maxLengthCheck = (object) => {
+    if (object.target.value.length > object.target.maxLength) {
+      object.target.value = object.target.value.slice(0, object.target.maxLength)
+    }
+  }
   return (
     <div>
       <div className="mx-auto">
@@ -44,7 +51,7 @@ function PaymentDetails() {
             <div className="input-group">
               <input type="text" value={ccNumber} onChange={formatAndSetCcNumber}
                 name="cardNumber" placeholder="Your card number" className="form-control" required />
-      
+
             </div>
           </div>
 
@@ -53,8 +60,8 @@ function PaymentDetails() {
               <div className="form-group">
                 <label><span className="hidden-xs">Expiration</span></label>
                 <div className="input-group">
-                  <input type="number" placeholder="MM" name="" className="form-control" required />
-                  <input type="number" placeholder="YY" name="" className="form-control" required />
+                  <input type="number" placeholder="MM" name="" className="form-control" maxLength={2} onInput={maxLengthCheck} required />
+                  <input type="number" placeholder="YY" name="" className="form-control" maxLength={2} onInput={maxLengthCheck} required />
                 </div>
               </div>
             </div>
@@ -64,7 +71,7 @@ function PaymentDetails() {
                 <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                   <i className="fa fa-question-circle"></i>
                 </label>
-                <input type="text" required className="form-control" />
+                <input type="text" maxLength={3} required className="form-control" />
               </div>
             </div>
           </div>
