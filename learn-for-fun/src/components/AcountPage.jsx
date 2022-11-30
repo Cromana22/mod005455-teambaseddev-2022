@@ -102,7 +102,7 @@ class AccountPage extends React.Component {
                                             <br />
                                             <button onClick={ShowSubscription}>My Subscriptions</button>
                                             <br />
-                                            <button onClick={ShowPaymentDetails}>My PaymentDetails</button>
+                                            <button onClick={ShowPaymentDetails}>My Payment Details</button>
                                         </Col>
 
                                         <Col>
