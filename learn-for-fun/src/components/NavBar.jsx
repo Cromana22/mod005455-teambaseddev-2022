@@ -23,7 +23,6 @@ function NavBar() {
         axios.get('http://localhost/logout.php', {withCredentials: true}).then(res => {
             setCookieEmail("");
             setCookieLoggedIn("");
-
             let reload = window.location.href;
            
         });
