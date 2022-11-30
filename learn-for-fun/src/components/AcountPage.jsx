@@ -65,6 +65,8 @@ class AccountPage extends React.Component {
         }
     }
 
+    
+
 
     componentDidMount() {
         //get data from database
@@ -111,42 +113,45 @@ class AccountPage extends React.Component {
                                                             Name
                                                         </div>
                                                         <div className="d-flex py-2">
-                                                            <input className="rounded" type="text" placeholder={result.firstName}></input>
+                                                            
+                                                            <input className="rounded" type="text" 
+                                                            defaultValue={result.firstName} placeholder="First name"></input>
                                                             <div className="px-4"></div>
-                                                            <input className="rounded" type="text" placeholder={result.lastName}></input>
+                                                            <input className="rounded" type="text" defaultValue={result.lastName}
+                                                            placeholder="Last name"></input>
                                                         </div>
 
                                                         <div className="py-2">
                                                             <div className="fs-5 fw-bold">Address Line 1</div>
-                                                            <input className="rounded" type="text" placeholder={result.address1}></input>
+                                                            <input className="rounded" type="text" placeholder="Address 1" defaultValue={result.address1}></input>
 
                                                         </div>
 
                                                         <div className="py-2">
                                                             <div className="fs-5 fw-bold">Address Line 2</div>
-                                                            <input className="rounded" type="text" placeholder={result.address2}></input>
+                                                            <input className="rounded" type="text" placeholder="Address 2" defaultValue={result.address2}></input>
 
                                                         </div>
                                                         <div className="py-2">
                                                             <div className="fs-5 fw-bold">City</div>
-                                                            <input className="rounded" type="text" placeholder={result.city}></input>
+                                                            <input className="rounded" type="text" placeholder="City" defaultValue={result.city}></input>
 
                                                         </div>
 
                                                         <div className="py-2">
                                                             <div className="fs-5 fw-bold">County</div>
-                                                            <input className="rounded" type="text" placeholder={result.county}></input>
+                                                            <input className="rounded" type="text" placeholder="County" defaultValue={result.county}></input>
 
                                                         </div>
 
                                                         <div className="py-2">
                                                             <div className="fs-5 fw-bold">Postcode</div>
-                                                            <input className="rounded" type="text" placeholder={result.postcode}></input>
+                                                            <input className="rounded" type="text" placeholder="Postcode"  defaultValue={result.postcode}></input>
 
                                                         </div>
                                                         <div className="py-2">
                                                             <div className="fs-5 fw-bold">Email address</div>
-                                                            <input className="rounded" type="text" placeholder={result.email}></input>
+                                                            <input className="rounded" type="text" placeholder="Email address" defaultValue={result.email}></input>
 
                                                         </div>
 
