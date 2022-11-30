@@ -36,13 +36,14 @@ function LoginPage() {
     }
 
     function attemptLogin() {
-        const data = [{email: formEmail, password: formPassword}];
+        const data = [{ email: formEmail, password: formPassword }];
+        const config = { headers: { 'Access-Control-Allow-Origin': 'http://localhost:3000' } };
 
-        axios.post('http://localhost/verifyLogin.php', data, {withCredentials: true})
-        .then(res => {
-            
-            handleLogin(res.data);
-        });
+        axios({ method: 'post', url: "http://localhost/verifyLogin.php", data: data, headers: { 'Access-Control-Allow-Origin': 'http://localhost:3000' } })
+            .then(res => {
+                console.log(res);
+                handleLogin(res.data);
+            });
     }
 
     return (

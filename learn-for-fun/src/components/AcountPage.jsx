@@ -59,7 +59,7 @@ function ShowAddPaymentDetails() {
 function saveCardDetails() {
     const data = [{}];
     console.log(data);
-    axios.post('http://localhost/AddCard.php', data, { withCredentials: true })
+    axios.post('http://localhost/AddCard.php', data, { withCredentials: true },config)
         .then(res => {
 
         });
