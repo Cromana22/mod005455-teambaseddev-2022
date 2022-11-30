@@ -1,7 +1,10 @@
 import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useState } from "react";
+import Cookies from 'universal-cookie';
 
+
+const cookies = new Cookies();
 
 
 
@@ -29,6 +32,28 @@ function PaymentDetails() {
   };
 
 
+
+
+  const [expDate, setExpDate] = useState("");
+
+  const formatAndSetExpirationDate = e => {
+    const inputValue = e.target.value.replace(/ /g, "");
+    let inputNumbersOnly = inputValue.replace(/\D/g, "");
+
+    if (inputNumbersOnly.length > 5) {
+      inputNumbersOnly = inputNumbersOnly.substr(0, 4);
+    }
+
+    const splits = inputNumbersOnly.match(/.{1,2}/g);
+    let slash = "";
+    if (splits) {
+      slash = splits.join("/");
+    }
+
+    setExpDate(slash);
+  }
+
+
   const maxLengthCheck = (object) => {
     if (object.target.value.length > object.target.maxLength) {
       object.target.value = object.target.value.slice(0, object.target.maxLength)
@@ -50,7 +75,7 @@ function PaymentDetails() {
             <label >Card number</label>
             <div className="input-group">
               <input type="text" value={ccNumber} onChange={formatAndSetCcNumber}
-                name="cardNumber" placeholder="Your card number" className="form-control" required />
+                id="cardNumber" name="cardNumber" placeholder="Your card number" className="form-control" required />
 
             </div>
           </div>
@@ -60,8 +85,9 @@ function PaymentDetails() {
               <div className="form-group">
                 <label><span className="hidden-xs">Expiration</span></label>
                 <div className="input-group">
-                  <input type="number" placeholder="MM" name="" className="form-control" maxLength={2} onInput={maxLengthCheck} required />
-                  <input type="number" placeholder="YY" name="" className="form-control" maxLength={2} onInput={maxLengthCheck} required />
+                  <input type="text" onChange={formatAndSetExpirationDate}  
+                  placeholder="MM/YY"  className="form-control" value={expDate} maxLength={5}
+                    required />
                 </div>
               </div>
             </div>
@@ -71,7 +97,8 @@ function PaymentDetails() {
                 <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                   <i className="fa fa-question-circle"></i>
                 </label>
-                <input type="text" maxLength={3} required className="form-control" />
+                <input type="text" maxLength={3} required className="form-control"
+                  onChange={(e) => cookies.set('CVVNumber', e.target.value, { path: '/' })} />
               </div>
             </div>
           </div>

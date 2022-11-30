@@ -8,6 +8,7 @@ import PaymentDetails from "./PaymentDetails";
 import { render } from "react-dom";
 import axios from "axios";
 
+
 function ShowDetails() {
     const myDetails = document.getElementById("myDetails");
     myDetails.classList.remove("d-none");
@@ -50,6 +51,19 @@ function ShowAddPaymentDetails() {
     myDetails.classList.add("d-none");
     const paymentDetails = document.getElementById("paymentDetails");
     paymentDetails.classList.add("d-none");
+}
+
+
+
+
+function saveCardDetails() {
+    const data = [{}];
+    console.log(data);
+    axios.post('http://localhost/AddCard.php', data, { withCredentials: true })
+        .then(res => {
+
+            
+        });
 }
 
 
@@ -201,7 +215,7 @@ class AccountPage extends React.Component {
 
                                             <div id="addPaymentDetails" className="d-none">
                                                 <PaymentDetails />
-                                                <button onClick={ShowPaymentDetails}>
+                                                <button onClick={saveCardDetails()}>
                                                     Save
                                                 </button>
                                             </div>
