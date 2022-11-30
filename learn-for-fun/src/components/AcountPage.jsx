@@ -92,7 +92,7 @@ class AccountPage extends React.Component {
                     <div className="col-10">
                         <div className="row">
 
-                            <div className="section">
+                            <div className="section pb-4">
                                 <Container fluid>
                                     <Row>
                                         <Col>
@@ -106,14 +106,52 @@ class AccountPage extends React.Component {
                                         <Col>
                                             {this.state.userData.map((result) => {
                                                 return (
-                                                    <div key={result.firstName} id="myDetails" className="">
-                                                        <p>Name: {result.firstName} {result.lastName}</p>
-                                                        <p>Address Line 1: {result.address1}</p>
-                                                        <p>Address Line 2: {result.address2}</p>
-                                                        <p>City: {result.city}</p>
-                                                        <p>County: {result.county}</p>
-                                                        <p>Postcode: {result.postcode}</p>
-                                                        <p>Email: {result.email}</p>
+                                                    <div key={result.firstName} id="myDetails" className="border rounded p-3">
+                                                        <div className="fw-bold fs-5">
+                                                            Name
+                                                        </div>
+                                                        <div className="d-flex py-2">
+                                                            <input className="rounded" type="text" placeholder={result.firstName}></input>
+                                                            <div className="px-4"></div>
+                                                            <input className="rounded" type="text" placeholder={result.lastName}></input>
+                                                        </div>
+
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">Address Line 1</div>
+                                                            <input className="rounded" type="text" placeholder={result.address1}></input>
+
+                                                        </div>
+
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">Address Line 2</div>
+                                                            <input className="rounded" type="text" placeholder={result.address2}></input>
+
+                                                        </div>
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">City</div>
+                                                            <input className="rounded" type="text" placeholder={result.city}></input>
+
+                                                        </div>
+
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">County</div>
+                                                            <input className="rounded" type="text" placeholder={result.county}></input>
+
+                                                        </div>
+
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">Postcode</div>
+                                                            <input className="rounded" type="text" placeholder={result.postcode}></input>
+
+                                                        </div>
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">Email address</div>
+                                                            <input className="rounded" type="text" placeholder={result.email}></input>
+
+                                                        </div>
+
+
+
                                                     </div>
                                                 )
                                             })}
@@ -137,6 +175,7 @@ class AccountPage extends React.Component {
                                                 {this.state.paymentData.map((result) => {
                                                     return (
                                                         <div key={result.paymentID}>
+
                                                             <p>Card Number: {result.cardNumber}</p>
                                                             <p>Card Type: {result.cardType}</p>
                                                             <p>Expiry Date: {result.expirationDate}</p>
