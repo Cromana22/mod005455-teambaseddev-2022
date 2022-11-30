@@ -106,7 +106,7 @@ class AccountPage extends React.Component {
                                         <Col>
                                             {this.state.userData.map((result) => {
                                                 return (
-                                                    <div id="myDetails" className="">
+                                                    <div key={result.firstName} id="myDetails" className="">
                                                         <p>Name: {result.firstName} {result.lastName}</p>
                                                         <p>Address Line 1: {result.address1}</p>
                                                         <p>Address Line 2: {result.address2}</p>
@@ -118,29 +118,38 @@ class AccountPage extends React.Component {
                                                 )
                                             })}
 
-                                            {this.state.subData.map((result) => {
-                                                return (
-                                                    <div id="subscriptionDetails" className="d-none">
-                                                        <p>Subscription Type: {result.subscriptionTypeName}</p>
-                                                        <p>Subscribed Since: {result.dateRaised}</p>
-                                                        <p>Monthly Price: £{result.price}</p>
-                                                    </div>
-                                                )
-                                            })}
 
-                                            {this.state.paymentData.map((result) => {
-                                                return (
-                                                    <div id="paymentDetails" className="d-none">
-                                                        <p>Card Number: {result.cardNumber}</p>
-                                                        <p>Card Type: {result.cardType}</p>
-                                                        <p>Expiry Date: {result.expirationDate}</p>
-                                                        <p>Holder Name: {result.cardHolderName}</p>
-                                                        <button onClick={ShowAddPaymentDetails}>
-                                                            Add New
-                                                        </button>
-                                                    </div>
-                                                )
-                                            })}
+                                            <div id="subscriptionDetails" className="d-none">
+                                                {this.state.subData.map((result) => {
+                                                    return (
+                                                        <div key={result.subscriptionID} className="">
+                                                            <p>Subscription Type: {result.subscriptionTypeName}</p>
+                                                            <p>Subscribed Since: {result.dateRaised}</p>
+                                                            <p>Monthly Price: £{result.price}</p>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+
+
+
+                                            <div id="paymentDetails" className="d-none">
+                                                {this.state.paymentData.map((result) => {
+                                                    return (
+                                                        <div key={result.paymentID}>
+                                                            <p>Card Number: {result.cardNumber}</p>
+                                                            <p>Card Type: {result.cardType}</p>
+                                                            <p>Expiry Date: {result.expirationDate}</p>
+                                                            <p>Holder Name: {result.cardHolderName}</p>
+                                                        </div>
+                                                    )
+                                                })}
+                                                <button onClick={ShowAddPaymentDetails}>
+                                                    Add New
+                                                </button>
+
+                                            </div>
+
                                             <div id="addPaymentDetails" className="d-none">
                                                 <PaymentDetails />
                                                 <button onClick={ShowPaymentDetails}>
