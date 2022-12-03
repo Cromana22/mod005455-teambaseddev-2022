@@ -39,11 +39,10 @@ function LoginPage() {
         const data = [{ email: formEmail, password: formPassword }];
         const config = { headers: { 'Access-Control-Allow-Origin': 'http://localhost:3000' } };
 
-        axios({ method: 'post', url: "http://localhost/verifyLogin.php", data: data, headers: { 'Access-Control-Allow-Origin': 'http://localhost:3000' } })
-            .then(res => {
-                console.log(res);
-                handleLogin(res.data);
-            });
+        axios({ method: 'post', url: "http://localhost/verifyLogin.php", withCredentials: true, data: data, headers: config })
+        .then(res => {
+            handleLogin(res.data);
+        });
     }
 
     return (

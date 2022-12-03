@@ -3,12 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { useState } from "react";
 import Cookies from 'universal-cookie';
 
-
 const cookies = new Cookies();
-
-
-
-
 
 function PaymentDetails() {
   const [ccNumber, setCcNumber] = useState("");
@@ -31,9 +26,6 @@ function PaymentDetails() {
     setCcNumber(spacedNumber);
   };
 
-
-
-
   const [expDate, setExpDate] = useState("");
 
   const formatAndSetExpirationDate = e => {
@@ -53,12 +45,12 @@ function PaymentDetails() {
     setExpDate(slash);
   }
 
-
   const maxLengthCheck = (object) => {
     if (object.target.value.length > object.target.maxLength) {
       object.target.value = object.target.value.slice(0, object.target.maxLength)
     }
   }
+
   return (
     <div>
       <div className="mx-auto">

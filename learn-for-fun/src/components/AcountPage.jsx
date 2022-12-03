@@ -5,9 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PaymentDetails from "./PaymentDetails";
-import { render } from "react-dom";
 import axios from "axios";
-
 
 function ShowDetails() {
     const myDetails = document.getElementById("myDetails");
@@ -53,47 +51,67 @@ function ShowAddPaymentDetails() {
     paymentDetails.classList.add("d-none");
 }
 
-
-
-
 function saveCardDetails() {
     const data = [{}];
     console.log(data);
-    axios.post('http://localhost/AddCard.php', data, { withCredentials: true },config)
-        .then(res => {
+    axios.post('http://localhost/AddCard.php', data, { withCredentials: true })
+    .then(res => {
 
-        });
+    });
 }
-
 
 class AccountPage extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            subData: [],
-            userData: [],
-            paymentData: []
-
+            userData: [{
+                "email": "",
+                "userID": "",
+                "password": "",
+                "firstName": "",
+                "lastName": "",
+                "address1": "",
+                "address2": "",
+                "city": "",
+                "county": "",
+                "postcode": ""
+            }],
+            subData: [{
+                "subscriptionID": "",
+                "userID": "",
+                "dateRaised": "",
+                "SubscriptionTypeId": "",
+                "courseID": "",
+                "subscriptionTypeID": "",
+                "subscriptionTypeName": "",
+                "price": ""
+            }],
+            paymentData: [{
+                "cardName": "",
+                "cardNumber": "",
+                "expiry": "",
+                "cvv": "",
+                "userID": 1
+            }]
         }
     }
-
-
-
 
     componentDidMount() {
         //get data from database
         axios.get('http://localhost/myAccountUser.php').then(res1 => {
             this.setState({ userData: res1.data });
+            console.log(res1.data);
             axios.get('http://localhost/myAccountSub.php').then(res2 => {
                 this.setState({ subData: res2.data });
+                console.log(res2.data);
                 axios.get('http://localhost/myAccountPayment.php').then(res3 => {
                     this.setState({ paymentData: res3.data });
                 });
             });
         });
-
     }
+
     render() {
         return (
             <div id="accountPage">
@@ -107,9 +125,9 @@ class AccountPage extends React.Component {
                     <div className="col-10">
                         <div className="row">
 
-                            <div className="section pb-4">
+                            <div className="section pb-4 endSection">
                                 <Container fluid>
-                                    <Row>
+                                    <Row >
                                         <Col>
                                             <button onClick={ShowDetails}>My Details</button>
                                             <br />
@@ -118,7 +136,7 @@ class AccountPage extends React.Component {
                                             <button onClick={ShowPaymentDetails}>My Payment Details</button>
                                         </Col>
 
-                                        <Col>
+                                        <Col xs={9}>
                                             {this.state.userData.map((result) => {
                                                 return (
 
@@ -166,12 +184,10 @@ class AccountPage extends React.Component {
                                                             <div className="fs-5 fw-bold">Email address</div>
                                                             <input className="rounded" type="text" placeholder="Email address" defaultValue={result.email}></input>
                                                         </div>
-
-
-
                                                     </div>
                                                 )
                                             })}
+
                                             <div id="subscriptionDetails" className="d-none">
                                                 {this.state.subData.map((result) => {
                                                     return (
@@ -184,29 +200,25 @@ class AccountPage extends React.Component {
                                                 })}
                                             </div>
 
-
-
                                             <div id="paymentDetails" className="d-none">
-                                                {this.state.paymentData.map((result) => {
+                                                { this.state.paymentData.map((result) => {
                                                     return (
-                                                        <div key={result.paymentID}>
-
+                                                        <div key={result.userID}>
+                                                            <p>Holder Name: {result.cardName}</p>
                                                             <p>Card Number: {result.cardNumber}</p>
-                                                            <p>Card Type: {result.cardType}</p>
-                                                            <p>Expiry Date: {result.expirationDate}</p>
-                                                            <p>Holder Name: {result.cardHolderName}</p>
+                                                            <p>Expiry Date: {result.expiry}</p>
+                                                            <p>CVV: {result.cvv}</p>
                                                         </div>
                                                     )
                                                 })}
                                                 <button onClick={ShowAddPaymentDetails}>
                                                     Add New
                                                 </button>
-
                                             </div>
 
                                             <div id="addPaymentDetails" className="d-none">
                                                 <PaymentDetails />
-                                                <button onClick={saveCardDetails()}>
+                                                <button onClick={saveCardDetails}>
                                                     Save
                                                 </button>
                                             </div>
