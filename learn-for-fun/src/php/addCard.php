@@ -15,7 +15,8 @@
     $query = $connection->prepare("SELECT user.userID AS userId FROM user WHERE user.email = '" .$email. "'"); 
     $query->execute();
     $rows = array(); //create php array of results
-    while($row = $query->fetch()) { $userId = $row; };
+    while($row = $query->fetch()) { $rows[] = $row; };
+    $userId = $rows[0]['userId'];
 
     $cardName = $array['cardName'];
     $cardNumber = $array['cardNumber'];

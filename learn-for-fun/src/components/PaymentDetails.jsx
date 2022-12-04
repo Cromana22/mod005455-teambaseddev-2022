@@ -19,9 +19,10 @@ function PaymentDetails(props) {
       .then(res => {
         console.log(res.data);
         if (res.data == "success") {
-          console.log("yay");
-        }
-        else {console.log("boo")};
+          alert("Payment Card Saved");
+          const reload = window.location.href;
+          window.location.href = reload;
+        };
       });
     }
   };
@@ -95,7 +96,7 @@ function PaymentDetails(props) {
 
         <p className="alert alert-success">Input Your Details</p>
 
-        <form role="form" onSubmit={SaveCardDetails}>
+        <form role="form">
           <div className="form-group" name="CARD NAME">
             <label >Full name (on the card)</label>
             <input type="text" name="username" value={cardName} placeholder="Name on the card" className="form-control" 
@@ -132,11 +133,11 @@ function PaymentDetails(props) {
               </div>
             </div>
           </div>
-          <button type="submit">
+          <button type="button" onClick={SaveCardDetails}>
             Save
           </button>
           &nbsp;
-          <button onClick={ShowPaymentDetails}>
+          <button type="button" onClick={ShowPaymentDetails}>
             Cancel
           </button>
         </form>

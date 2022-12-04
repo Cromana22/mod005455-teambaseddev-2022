@@ -206,7 +206,7 @@ class AccountPage extends React.Component {
                                             <div id="paymentDetails" className="d-none">
                                                 { this.state.paymentData.map((result) => {
                                                     return (
-                                                        <div key={result.userID}>
+                                                        <div key={result.cardNumber+result.userID}>
                                                             <p>Holder Name: {result.cardName}</p>
                                                             <p>Card Number: {result.cardNumber}</p>
                                                             <p>Expiry Date: {result.expiry}</p>
