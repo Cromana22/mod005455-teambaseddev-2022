@@ -93,23 +93,35 @@ class AccountPage extends React.Component {
                 "expiry": "",
                 "cvv": "",
                 "userID": 1
-            }]
+            }],
+            cookieEmail: " "    
         }
     }
 
     componentDidMount() {
-        //get data from database
-        axios.get('http://localhost/myAccountUser.php').then(res1 => {
-            this.setState({ userData: res1.data });
-            console.log(res1.data);
-            axios.get('http://localhost/myAccountSub.php').then(res2 => {
-                this.setState({ subData: res2.data });
-                console.log(res2.data);
-                axios.get('http://localhost/myAccountPayment.php').then(res3 => {
-                    this.setState({ paymentData: res3.data });
+
+        axios.get('http://localhost/getcookies.php', {withCredentials: true}).then(res => {
+            this.setState({ cookieEmail: res.data.email });
+
+            //get data from database
+            const data = { email: this.state.cookieEmail };
+            axios.post('http://localhost/myAccountUser.php', data)
+            .then(res1 => {
+                this.setState({ userData: res1.data });
+
+                axios.post('http://localhost/myAccountSub.php', data)
+                .then(res2 => {
+                    this.setState({ subData: res2.data });
+
+                    axios.post('http://localhost/myAccountPayment.php', data)
+                    .then(res3 => {
+                        this.setState({ paymentData: res3.data });
+                    });
                 });
             });
         });
+
+
     }
 
     render() {

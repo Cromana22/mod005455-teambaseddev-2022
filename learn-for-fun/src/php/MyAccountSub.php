@@ -7,15 +7,20 @@
 
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata, true);
-    $array = $request[0];
+    $email = $request['email'];
 
-    //$userID = $array['userID'];
+    //get user ID
+    $query = $connection->prepare("SELECT user.userID AS userId FROM user WHERE user.email = '" .$email. "'"); 
+    $query->execute();
+    $rows = array(); //create php array of results
+    while($row = $query->fetch()) { $rows[] = $row; };
+    $userId = $rows[0]['userId'];
 
-    $userID=2;
+    //get details
     $query1 = "SELECT *
     FROM subscription
     INNER JOIN subscriptiontype
-    ON subscription.SubscriptionTypeId = subscriptiontype.subscriptionTypeID WHERE subscription.userID = $userID";
+    ON subscription.SubscriptionTypeId = subscriptiontype.subscriptionTypeID WHERE subscription.userID = $userId";
     $rows = array();
 
 

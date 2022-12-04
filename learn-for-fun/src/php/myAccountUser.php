@@ -4,15 +4,21 @@
     header("Access-Control-Allow-Origin: http://localhost:3000");
     header("Access-Control-Allow-Methods: *");
     header("Access-Control-Allow-Headers: *");
+    header('Access-Control-Allow-Credentials: true');
 
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata, true);
-    $array = $request[0];
+    $email = $request['email'];
 
-    //$userID = $array['userID'];
+    //get user ID
+    $query = $connection->prepare("SELECT user.userID AS userId FROM user WHERE user.email = '" .$email. "'"); 
+    $query->execute();
+    $rows = array(); //create php array of results
+    while($row = $query->fetch()) { $rows[] = $row; };
+    $userId = $rows[0]['userId'];
 
-    $userID=2;
-    $query1 = "SELECT * FROM user WHERE userID = $userID";
+    //get details
+    $query1 = "SELECT * FROM user WHERE userID = $userId";
     $rows = array();
 
     $query = $connection->prepare($query1); 
