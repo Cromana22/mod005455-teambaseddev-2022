@@ -51,15 +51,6 @@ function ShowAddPaymentDetails() {
     paymentDetails.classList.add("d-none");
 }
 
-function saveCardDetails() {
-    const data = [{}];
-    console.log(data);
-    axios.post('http://localhost/AddCard.php', data, { withCredentials: true })
-    .then(res => {
-
-    });
-}
-
 class AccountPage extends React.Component {
 
     constructor(props) {
@@ -229,10 +220,7 @@ class AccountPage extends React.Component {
                                             </div>
 
                                             <div id="addPaymentDetails" className="d-none">
-                                                <PaymentDetails />
-                                                <button onClick={saveCardDetails}>
-                                                    Save
-                                                </button>
+                                                <PaymentDetails email={this.state.cookieEmail} />
                                             </div>
 
                                         </Col>
