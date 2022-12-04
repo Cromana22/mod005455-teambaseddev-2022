@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PaymentDetails from "./PaymentDetails";
+import axios from "axios";
 
 function ShowDetails() {
     const myDetails = document.getElementById("myDetails");
@@ -50,71 +51,194 @@ function ShowAddPaymentDetails() {
     paymentDetails.classList.add("d-none");
 }
 
-function AccountPage() {
-    return (
-        <div id="accountPage">
-            <NavBar />
+class AccountPage extends React.Component {
 
-            <div className="row">
+    constructor(props) {
+        super(props)
+        this.state = {
+            userData: [{
+                "email": "",
+                "userID": "",
+                "password": "",
+                "firstName": "",
+                "lastName": "",
+                "address1": "",
+                "address2": "",
+                "city": "",
+                "county": "",
+                "postcode": ""
+            }],
+            subData: [{
+                "subscriptionID": "",
+                "userID": "",
+                "dateRaised": "",
+                "SubscriptionTypeId": "",
+                "courseID": "",
+                "subscriptionTypeID": "",
+                "subscriptionTypeName": "",
+                "price": ""
+            }],
+            paymentData: [{
+                "cardName": "",
+                "cardNumber": "",
+                "expiry": "",
+                "cvv": "",
+                "userID": 1
+            }],
+            cookieEmail: " "    
+        }
+    }
 
-                <div className="col-1">
-                </div>
+    componentDidMount() {
 
-                <div className="col-10">
-                    <div className="row">
+        axios.get('http://localhost/getcookies.php', {withCredentials: true}).then(res => {
+            this.setState({ cookieEmail: res.data.email });
 
-                        <div className="section">
-                            <Container fluid>
-                                <Row>
-                                    <Col>
-                                        <button onClick={ShowDetails}>My Details</button>
-                                        <br />
-                                        <button onClick={ShowSubscription}>My Subscriptions</button>
-                                        <br />
-                                        <button onClick={ShowPaymentDetails}>My PaymentDetails</button>
-                                    </Col>
-                                    <Col>
-                                        <div id="myDetails" className="">
-                                            <p>Name: FROM DATABASE GOES HERE</p>
-                                            <p>Address Line 1: FROM DATABASE GOES HERE</p>
-                                            <p>Address Line 2: FROM DATABASE GOES HERE</p>
-                                            <p>Town: FROM DATABASE GOES HERE</p>
-                                            <p>County: FROM DATABASE GOES HERE</p>
-                                            <p>Postcode: FROM DATABASE GOES HERE</p>
-                                            <p>Email: FROM DATABASE GOES HERE</p>
-                                        </div>
-                                        <div id="subscriptionDetails" className="d-none">
-                                            <p>Subscription Type: FROM DATABASE TYPE (COURSE NAME IF EXISTS)</p>
-                                            <p>Subscribed Since: FROM DATABASE GOES HERE</p>
-                                            <p>Monthly Price: £FROM DATABASE GOES HERE</p>
-                                        </div>
-                                        <div id="paymentDetails" className="d-none">
-                                            <p>Card Number: FROM DATABASE GOES HERE</p>
-                                            <p>Card Type: FROM DATABASE GOES HERE</p>
-                                            <p>Expiry Date: FROM DATABASE GOES HERE</p>
-                                            <p>Holder Name: FROM DATABASE GOES HERE</p>
-                                            <button onClick={ShowAddPaymentDetails}>
-                                                Add New
-                                            </button>
-                                        </div>
-                                        <div id="addPaymentDetails" className="d-none">
-                                            <PaymentDetails />
-                                            <button onClick={ShowPaymentDetails}>
-                                                Save
-                                            </button>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Container>
+            //get data from database
+            const data = { email: this.state.cookieEmail };
+            axios.post('http://localhost/myAccountUser.php', data)
+            .then(res1 => {
+                this.setState({ userData: res1.data });
+
+                axios.post('http://localhost/myAccountSub.php', data)
+                .then(res2 => {
+                    this.setState({ subData: res2.data });
+
+                    axios.post('http://localhost/myAccountPayment.php', data)
+                    .then(res3 => {
+                        this.setState({ paymentData: res3.data });
+                    });
+                });
+            });
+        });
+
+
+    }
+
+    render() {
+        return (
+            <div id="accountPage">
+                <NavBar />
+
+                <div className="row">
+
+                    <div className="col-1">
+                    </div>
+
+                    <div className="col-10">
+                        <div className="row">
+
+                            <div className="section pb-4 endSection">
+                                <Container fluid>
+                                    <Row >
+                                        <Col>
+                                            <button onClick={ShowDetails}>My Details</button>
+                                            <br />
+                                            <button onClick={ShowSubscription}>My Subscriptions</button>
+                                            <br />
+                                            <button onClick={ShowPaymentDetails}>My Payment Details</button>
+                                        </Col>
+
+                                        <Col xs={9}>
+                                            {this.state.userData.map((result) => {
+                                                return (
+
+                                                    <div key={result.firstName} id="myDetails" className="border rounded p-3">
+                                                        
+                                                        <div className="fw-bold fs-5">
+                                                            Name
+                                                        </div>
+
+                                                        <div className="d-flex py-2">
+                                                            <input className="rounded" type="text"
+                                                                defaultValue={result.firstName} placeholder="First name"></input>
+                                                            <div className="px-4"></div>
+                                                            <input className="rounded" type="text" defaultValue={result.lastName}
+                                                                placeholder="Last name"></input>
+                                                        </div>
+
+                                                        <div className="py-2 d-flex">
+                                                            <div className="fs-5 fw-bold">Address Line 1</div>
+                                                            <div className="px-5"></div>
+                                                            <div className="fs-5 fw-bold">Address Line 2</div>
+                                                        </div>
+
+                                                        <div className="py-2 d-flex">
+                                                            <input className="rounded" type="text" placeholder="Address 1" defaultValue={result.address1}></input>
+                                                            <div className="px-4"></div>
+                                                            <input className="rounded" type="text" placeholder="Address 2" defaultValue={result.address2}></input>
+                                                        </div>
+
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">City</div>
+                                                            <input className="rounded" type="text" placeholder="City" defaultValue={result.city}></input>
+                                                        </div>
+
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">County</div>
+                                                            <input className="rounded" type="text" placeholder="County" defaultValue={result.county}></input>
+                                                        </div>
+
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">Postcode</div>
+                                                            <input className="rounded" type="text" placeholder="Postcode" defaultValue={result.postcode}></input>
+                                                        </div>
+                                                        <div className="py-2">
+                                                            <div className="fs-5 fw-bold">Email address</div>
+                                                            <input className="rounded" type="text" placeholder="Email address" defaultValue={result.email}></input>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })}
+
+                                            <div id="subscriptionDetails" className="d-none">
+                                                {this.state.subData.map((result) => {
+                                                    return (
+                                                        <div key={result.subscriptionID} className="">
+                                                            <p>Subscription Type: {result.subscriptionTypeName}</p>
+                                                            <p>Subscribed Since: {result.dateRaised}</p>
+                                                            <p>Monthly Price: £{result.price}</p>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+
+                                            <div id="paymentDetails" className="d-none">
+                                                { this.state.paymentData.map((result) => {
+                                                    return (
+                                                        <div key={result.cardNumber+result.userID}>
+                                                            <p>Holder Name: {result.cardName}</p>
+                                                            <p>Card Number: {result.cardNumber}</p>
+                                                            <p>Expiry Date: {result.expiry}</p>
+                                                            <p>CVV: {result.cvv}</p>
+                                                        </div>
+                                                    )
+                                                })}
+                                                <button onClick={ShowAddPaymentDetails}>
+                                                    Add New
+                                                </button>
+                                            </div>
+
+                                            <div id="addPaymentDetails" className="d-none">
+                                                <PaymentDetails email={this.state.cookieEmail} />
+                                            </div>
+
+                                        </Col>
+
+                                    </Row>
+                                </Container>
+                            </div>
                         </div>
                     </div>
+                    <div className="col-1">
+                    </div>
                 </div>
-                <div className="col-1">
-                </div>
+
+                <Footer />
             </div>
-            <Footer />
-        </div>
-    )
+        )
+    }
 }
+
 
 export default AccountPage;

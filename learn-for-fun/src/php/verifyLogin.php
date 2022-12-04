@@ -2,7 +2,7 @@
     require 'database.php';
 
     header("Access-Control-Allow-Origin: http://localhost:3000");
-    header('Access-Control-Allow-Headers: content-type');
+    header('Access-Control-Allow-Headers: content-type, access-control-allow-origin, access-control-allow-headers, headers');
     header('Access-Control-Allow-Credentials: true');
 
     $postdata = file_get_contents("php://input");

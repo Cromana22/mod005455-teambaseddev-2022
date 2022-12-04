@@ -1,5 +1,6 @@
 {
   "name": "learn-for-fun",
+  "proxy": "http://localhost:8080",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +15,7 @@
     "react-scripts": "5.0.1",
     "unicode-canonical-property-names-ecmascript": "^2.0.0",
     "unicode-property-aliases-ecmascript": "^2.1.0",
+    "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

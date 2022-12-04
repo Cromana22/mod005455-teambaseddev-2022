@@ -13,7 +13,9 @@ class Courses extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: []
+            data: [],
+            spinnerCourseClassName: "text-center",
+            searchedRecipe: ""
         }
     }
 
@@ -21,9 +23,14 @@ class Courses extends React.Component {
         //get data from database
         axios.get('http://localhost/getCourses.php').then(res => {
             this.setState({ data: res.data });
+            this.setState({ spinnerCourseClassName: "d-none" });
         });
 
     }
+
+
+
+   
 
     render() {
         return (
@@ -63,7 +70,16 @@ class Courses extends React.Component {
                                 </div>
                             </div>
 
-                            <div className="py-3"></div>
+                            <div className="py-3">
+
+                                <div className={this.state.spinnerCourseClassName} id="spinnerCourses">
+                                    <div className="spinner-border" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
 
                             {this.state.data.map((result) => {
                                 return (
@@ -102,12 +118,12 @@ class Courses extends React.Component {
                                                                     <i className="bi bi-star"></i> 4.5
                                                                 </div>
                                                             </div>
-                                                            <div className="col-3">
+                                                            <div className="col-4">
                                                                 <div className="bg-secondary text-white p-1 rounded" >
                                                                     <span className="bi bi-eye"></span> 200k
                                                                 </div>
                                                             </div>
-                                                            <div className="col-4">
+                                                            <div className="col-3">
                                                                 <div className="bg-dark text-white"></div>
                                                             </div>
 

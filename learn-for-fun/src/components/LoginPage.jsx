@@ -28,7 +28,7 @@ function LoginPage() {
     function handleLogin(validate) {
         //if it works, redirect to home page, or throw error if fails
         if (validate == "success") {
-            navigate("../");
+            navigate(-1);
         }
         else {
             alert("Login Failed. Please try again.");
@@ -36,9 +36,10 @@ function LoginPage() {
     }
 
     function attemptLogin() {
-        const data = [{email: formEmail, password: formPassword}];
+        const data = [{ email: formEmail, password: formPassword }];
+        const config = { headers: { 'Access-Control-Allow-Origin': 'http://localhost:3000' } };
 
-        axios.post('http://localhost/verifyLogin.php', data, {withCredentials: true})
+        axios({ method: 'post', url: "http://localhost/verifyLogin.php", withCredentials: true, data: data, headers: config })
         .then(res => {
             handleLogin(res.data);
         });
