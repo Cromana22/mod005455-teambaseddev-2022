@@ -25,7 +25,7 @@ function Course() {
     //get subscriptions to check
     axios.get('http://localhost/getSubscriptions.php', {withCredentials: true}).then(res => {
         const subscriptions = res.data;
-
+        
         //if there are subscriptions
         if (subscriptions.length > 0) {
 
