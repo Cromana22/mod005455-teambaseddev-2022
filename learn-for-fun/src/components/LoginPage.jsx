@@ -28,7 +28,7 @@ function LoginPage() {
     function handleLogin(validate) {
         //if it works, redirect to home page, or throw error if fails
         if (validate == "success") {
-            navigate("../");
+            navigate(-1);
         }
         else {
             alert("Login Failed. Please try again.");
