@@ -1,0 +1,210 @@
+{
+  "id": "2f404d11-011a-4ab0-99d0-a71b8410b24d",
+  "version": "2.0",
+  "name": "Team-based",
+  "url": "http://localhost:3000/",
+  "tests": [{
+    "id": "b8f38129-a2fa-4073-8770-bb23d9b5cd49",
+    "name": "test1",
+    "commands": [{
+      "id": "6c666277-ca18-4c48-a200-7f98ff1ace88",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59f91ef5-425a-4c94-bbc0-10ec3e51724a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "533x553",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c134dec-8dcd-447e-8577-a64d71a4d958",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar-toggler-icon",
+      "targets": [
+        ["css=.navbar-toggler-icon", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/nav/div/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9d77e8c-c552-41d2-b335-97cfc7ef1aa1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Games",
+      "targets": [
+        ["linkText=Games", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Games')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/games')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Games')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "962da7ca-7a08-46df-9b17-7b829b29c37e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gameCards:nth-child(2) .card-img-top",
+      "targets": [
+        ["css=.gameCards:nth-child(2) .card-img-top", "css:finder"],
+        ["xpath=//img[contains(@src,'https://www.htmlgames.com/uploaded/game/thumb/pinball300.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/a/div/img", "xpath:idRelative"],
+        ["xpath=//div[2]/a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bc84cfa-9add-41bc-825d-abd16a7a3a21",
+      "comment": "",
+      "command": "click",
+      "target": "css=img",
+      "targets": [
+        ["css=img", "css:finder"],
+        ["xpath=//img[@alt='Learn4Fun logo']", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/nav/div/span/a/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7b7e3be-af45-43cb-b243-6f9c25897adb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.carousel-control-prev-icon",
+      "targets": [
+        ["css=.carousel-control-prev-icon", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee45d8ae-5af5-4945-81bc-111069182e09",
+      "comment": "",
+      "command": "click",
+      "target": "css=.carousel-control-prev-icon",
+      "targets": [
+        ["css=.carousel-control-prev-icon", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5106cd9e-1169-481c-b0f7-a6ab4f70f4ab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Facebook",
+      "targets": [
+        ["linkText=Facebook", "linkText"],
+        ["css=.links > .btn:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Facebook')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/footer/div/div[2]/div/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.facebook.com')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Facebook')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e180a989-db09-4737-80a1-fd0ca05863b1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Subscribe",
+      "targets": [
+        ["linkText=Subscribe", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Subscribe')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[4]/div[4]/button/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/subscription')]", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Subscribe')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24512732-fda1-45eb-9621-a289a8fa98e3",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,850.4000244140625)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12c7a5c6-c5b2-4996-8c7b-2f9af6818e66",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar-toggler-icon",
+      "targets": [
+        ["css=.navbar-toggler-icon", "css:finder"],
+        ["xpath=//div[@id='subscribtion']/div/div/div[2]/nav/div/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a305684e-2b50-461d-b44c-69879b8947e7",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["name=search", "name"],
+        ["css=#search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarScroll']/form/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b836a6e8-f99d-46c9-af5d-7944d37a34a3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Courses",
+      "targets": [
+        ["linkText=Courses", "linkText"],
+        ["css=.text-center:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Courses')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/courses')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Courses')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d910f0a3-cb36-4734-9a8c-5400f24901db",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar-toggler-icon",
+      "targets": [
+        ["css=.navbar-toggler-icon", "css:finder"],
+        ["xpath=//div[@id='courses']/div/div/div[2]/nav/div/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75fd398b-2663-4944-83c6-e8958fa00773",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.nav-link:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/')])[2]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "21c5c24f-17da-424d-863c-cf69805ca239",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b8f38129-a2fa-4073-8770-bb23d9b5cd49"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
