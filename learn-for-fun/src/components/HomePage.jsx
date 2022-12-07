@@ -51,7 +51,6 @@ function HomePage() {
                 </div>
 
                 <div className="center section">
-                    
                         <Button variant="primary"> <Link to="/subscription" exact='true'>Subscribe</Link></Button>
                 </div>
             </div>
